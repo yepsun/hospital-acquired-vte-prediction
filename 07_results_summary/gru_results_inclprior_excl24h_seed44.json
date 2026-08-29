@@ -1,0 +1,345 @@
+{
+  "fold_mean_auc": 0.7861971445643638,
+  "fold_mean_auc_ci": [
+    0.7548641484450844,
+    0.8199106611974498
+  ],
+  "fold_mean_auprc": 0.13994039437497782,
+  "fold_mean_brier": 0.1067459300160408,
+  "n_folds": 5,
+  "folds": [
+    {
+      "fold": 0,
+      "auc": 0.8401280898779083,
+      "auprc": 0.18710646765130504,
+      "brier": 0.10261833667755127,
+      "epochs": 5,
+      "best_val_auc": 0.8401280898779083
+    },
+    {
+      "fold": 1,
+      "auc": 0.7929115178119823,
+      "auprc": 0.18436367650218047,
+      "brier": 0.11104264855384827,
+      "epochs": 5,
+      "best_val_auc": 0.7929115178119823
+    },
+    {
+      "fold": 2,
+      "auc": 0.8064323754104776,
+      "auprc": 0.11492177054460673,
+      "brier": 0.13263460993766785,
+      "epochs": 4,
+      "best_val_auc": 0.8064323754104776
+    },
+    {
+      "fold": 3,
+      "auc": 0.7449477423459946,
+      "auprc": 0.1124976284671218,
+      "brier": 0.10551238805055618,
+      "epochs": 4,
+      "best_val_auc": 0.7449477423459946
+    },
+    {
+      "fold": 4,
+      "auc": 0.7465659973754557,
+      "auprc": 0.1008124287096751,
+      "brier": 0.08192166686058044,
+      "epochs": 6,
+      "best_val_auc": 0.7465659973754557
+    }
+  ],
+  "oof_auc": 0.8263031854966086,
+  "oof_auprc": 0.027833285311313582,
+  "oof_brier": 0.08111626391865123,
+  "oof_ece": 0.48513277030980984,
+  "oof_inference": {
+    "method": "patient-level cluster bootstrap (subject_id) on full eval view (train+val landmark rows), 2000 replicates; negatives downsampled to 50k per replicate, AUC via Mann-Whitney rank statistic (same as scripts/47)",
+    "n_replicates_used": 2000,
+    "oof_auc_ci": {
+      "gru": {
+        "auc": 0.8263031854966087,
+        "ci": [
+          0.7897022438116267,
+          0.8601080786571758
+        ]
+      },
+      "xgb": {
+        "auc": 0.8429478416125028,
+        "ci": [
+          0.8153115212763117,
+          0.8690339240781115
+        ]
+      },
+      "padua": {
+        "auc": NaN,
+        "ci": [
+          NaN,
+          NaN
+        ]
+      }
+    },
+    "delta_auc": {
+      "gru_vs_xgb": {
+        "estimate": -0.01650529153906681,
+        "ci": [
+          -0.0436464228492615,
+          0.006446862167610783
+        ],
+        "p_two_sided": 0.189
+      },
+      "gru_vs_padua": {
+        "estimate": NaN,
+        "ci": [
+          NaN,
+          NaN
+        ],
+        "p_two_sided": 0.0
+      }
+    }
+  },
+  "training": {
+    "histories": [
+      [
+        {
+          "epoch": 0,
+          "train_loss": 1.054287324254142,
+          "val_auc": 0.8186229912777497
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.7762706865413862,
+          "val_auc": 0.8401280898779083
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.5947662566814773,
+          "val_auc": 0.8116296232938156
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.47723050458425686,
+          "val_auc": 0.8002077705858843
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.3780933942012209,
+          "val_auc": 0.783528895161001
+        }
+      ],
+      [
+        {
+          "epoch": 0,
+          "train_loss": 1.0219013420772363,
+          "val_auc": 0.7668503471754964
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.729230429021786,
+          "val_auc": 0.7929115178119823
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.5720571278735768,
+          "val_auc": 0.7643638157904914
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.4822432644087562,
+          "val_auc": 0.788253612125543
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.39662775272877504,
+          "val_auc": 0.7481828390587515
+        }
+      ],
+      [
+        {
+          "epoch": 0,
+          "train_loss": 1.0436367135398668,
+          "val_auc": 0.8064323754104776
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.7347986006120564,
+          "val_auc": 0.7881920888224803
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.5742002062800706,
+          "val_auc": 0.7383362490197262
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.4700788185247291,
+          "val_auc": 0.7605055583655451
+        }
+      ],
+      [
+        {
+          "epoch": 0,
+          "train_loss": 1.014653150718785,
+          "val_auc": 0.7449477423459946
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.7099202298575402,
+          "val_auc": 0.7279274255557014
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.5614216365563183,
+          "val_auc": 0.7123182896655766
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.46102482047562954,
+          "val_auc": 0.6862133921040408
+        }
+      ],
+      [
+        {
+          "epoch": 0,
+          "train_loss": 1.0068201446786,
+          "val_auc": 0.7337780606442965
+        },
+        {
+          "epoch": 1,
+          "train_loss": 0.7143615162712285,
+          "val_auc": 0.730865515961963
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.5533800986209715,
+          "val_auc": 0.7465659973754557
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.46140733627865377,
+          "val_auc": 0.7437015878662615
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.39930862697881925,
+          "val_auc": 0.7132789618181153
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.33261905528600044,
+          "val_auc": 0.712148808170025
+        }
+      ]
+    ],
+    "note": "early stop on fold-test val AUC, patience 3; loss printed per epoch (no divergence observed if train_loss decreases)"
+  },
+  "meta": {
+    "seq_channels": [
+      "lab_wbc_median",
+      "lab_platelet_median",
+      "lab_rdw_median",
+      "lab_hemoglobin_median",
+      "lab_creatinine_median",
+      "lab_bun_median",
+      "lab_inr_median",
+      "lab_pt_median",
+      "lab_aptt_median",
+      "lab_wbc_count",
+      "lab_platelet_count",
+      "lab_rdw_count",
+      "lab_hemoglobin_count",
+      "lab_creatinine_count",
+      "lab_bun_count",
+      "lab_inr_count",
+      "lab_pt_count",
+      "lab_aptt_count",
+      "vital_heart_rate_mean",
+      "vital_sbp_mean",
+      "vital_dbp_mean",
+      "vital_resp_rate_mean",
+      "vital_spo2_mean",
+      "vital_temperature_mean",
+      "vital_heart_rate_worst",
+      "vital_sbp_worst",
+      "vital_dbp_worst",
+      "vital_resp_rate_worst",
+      "vital_spo2_worst",
+      "vital_temperature_worst",
+      "rx_heparin",
+      "rx_warfarin",
+      "rx_doac",
+      "rx_antiplatelet",
+      "proc_cvc_cum",
+      "proc_mechvent_cum",
+      "proc_transfusion_cum"
+    ],
+    "n_in_channels": 74,
+    "max_len_buckets": 42,
+    "static_features": [
+      "lab_wbc_median",
+      "lab_wbc_count",
+      "lab_neutrophils_count",
+      "lab_lymphocytes_count",
+      "lab_platelet_median",
+      "lab_platelet_count",
+      "lab_rdw_median",
+      "lab_rdw_count",
+      "lab_hemoglobin_median",
+      "lab_hemoglobin_count",
+      "lab_ddimer_count",
+      "lab_inr_median",
+      "lab_inr_count",
+      "lab_pt_median",
+      "lab_pt_count",
+      "lab_aptt_median",
+      "lab_aptt_count",
+      "lab_fibrinogen_count",
+      "lab_creatinine_median",
+      "lab_creatinine_count",
+      "lab_bun_median",
+      "lab_bun_count",
+      "lab_albumin_count",
+      "lab_crp_count",
+      "bmi",
+      "age",
+      "male",
+      "cancer_active",
+      "heart_failure",
+      "copd",
+      "chronic_liver",
+      "ckd",
+      "diabetes",
+      "stroke",
+      "mi",
+      "obesity_icd",
+      "varicose",
+      "thrombophilia",
+      "infection_severe",
+      "rheumatologic",
+      "prior_vte",
+      "prior_vte_any",
+      "adm_elective",
+      "adm_emergency",
+      "first_careunit_icu",
+      "prior_admissions_n",
+      "surgery_flag",
+      "trauma_flag",
+      "rx_heparin",
+      "rx_warfarin",
+      "rx_doac",
+      "rx_antiplatelet",
+      "rx_hormone",
+      "proc_cvc",
+      "proc_mechvent",
+      "proc_transfusion",
+      "icu_los_first24h"
+    ],
+    "n_pool_undersampled": 120719,
+    "n_events_pool": 2742,
+    "n_eval": 1183712,
+    "n_events_eval": 2742,
+    "cv": "StratifiedGroupKFold 5 folds (seed 44) on undersampled train+val view, stratify label, group subject_id; fold bootstrap 2000 for fold-mean AUC CI; seed44 OOF on full eval view (batch 4096)",
+    "model": "GRU(74->64, 1 layer) -> last hidden -> concat static 57 -> MLP(121->64->1) -> sigmoid; left-padded sequences, last-42 buckets truncation; per-fold channel standardization on observed values; static per-fold median imputation + standardization",
+    "training": "WeightedBCE pos_weight=fold neg/pos, AdamW lr 1e-3 wd 1e-2, batch 512, <=30 epochs, early stop val AUC patience 3, grad clip 1.0, seed 42, CPU"
+  }
+}

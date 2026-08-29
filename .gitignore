@@ -1,0 +1,17 @@
+# patient-level data and derived artifacts governed by the PhysioNet DUA
+*.parquet
+*.npy
+*.npz
+*.csv
+*.sqlite
+*.db
+data/
+output/
+logs/
+*.log
+
+# environment and caches
+.env
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

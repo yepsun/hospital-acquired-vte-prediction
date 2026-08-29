@@ -1,0 +1,30 @@
+{
+  "n_test": 72527,
+  "n_events": 120,
+  "padua": {
+    "test_auc": 0.7441057724621469,
+    "test_auprc": 0.005151503766456792,
+    "brier": 0.0016493617445324869,
+    "brier_method": "score calibrated to probability via univariate logistic regression fit on the test set (in-sample)",
+    "high_risk": {
+      "sensitivity": 0.7583333333333333,
+      "specificity": 0.6127170024997584,
+      "ppv": 0.0032346354814630504,
+      "npv": 0.9993467585709781,
+      "n_high_risk": 28133
+    }
+  },
+  "improve": {
+    "test_auc": 0.739496469033841,
+    "test_auprc": 0.005392913318843062,
+    "brier": 0.0016489602956029708,
+    "brier_method": "score calibrated to probability via univariate logistic regression fit on the test set (in-sample)",
+    "high_risk": {
+      "sensitivity": 0.4666666666666667,
+      "specificity": 0.845443120140318,
+      "ppv": 0.004979105539254913,
+      "npv": 0.9989556135770234,
+      "n_high_risk": 11247
+    }
+  }
+}

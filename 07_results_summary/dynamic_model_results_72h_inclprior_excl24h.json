@@ -1,0 +1,286 @@
+{
+  "lr": {
+    "fold_mean_auc": 0.7547661838641004,
+    "fold_mean_auc_ci": [
+      0.7404117383750997,
+      0.7681922592850255
+    ],
+    "fold_mean_auprc": 0.07795331708927265,
+    "fold_mean_brier": 0.02283411125342051,
+    "n_folds": 15,
+    "oof_auc": 0.8073632327460646,
+    "oof_auprc": 0.010712927889014255,
+    "oof_brier": 0.0035446832923715786,
+    "oof_ece": 0.48588584114019256
+  },
+  "xgb": {
+    "fold_mean_auc": 0.7996927413613018,
+    "fold_mean_auc_ci": [
+      0.7882986312246347,
+      0.8114719909205231
+    ],
+    "fold_mean_auprc": 0.19954746228230433,
+    "fold_mean_brier": 0.020898703609903653,
+    "n_folds": 15,
+    "oof_auc": 0.843274082206944,
+    "oof_auprc": 0.05729165927173652,
+    "oof_brier": 0.0031189418878369707,
+    "oof_ece": 0.31708737985049607
+  },
+  "padua_eval": {
+    "oof_auc": 0.5728669284227978,
+    "oof_auprc": 0.0034451232205162316,
+    "oof_brier": 0.0024178004610881177,
+    "oof_ece": 3.108755079334795e-05,
+    "note": "Padua broadcast per hadm; raw score for AUC/AUPRC, probability via univariate logistic calibration on eval view"
+  },
+  "static_xgb_eval": {
+    "oof_auc": 0.7387806591109789,
+    "oof_auprc": 0.006899924759566481,
+    "oof_brier": 0.002448629965037297,
+    "oof_ece": 0.1641188058750634,
+    "note": "M4 static XGB seed42 OOF (admission level, recomputed) broadcast to landmark rows"
+  },
+  "oof_inference": {
+    "n_replicates_used": 2000,
+    "oof_auc_ci": {
+      "lr": {
+        "auc": 0.8073632121086121,
+        "ci": [
+          0.7725420281291008,
+          0.8394592806696892
+        ]
+      },
+      "xgb": {
+        "auc": 0.8432741165161133,
+        "ci": [
+          0.8139354109764099,
+          0.8703662797808647
+        ]
+      },
+      "padua": {
+        "auc": 0.5728669762611389,
+        "ci": [
+          0.5185515388846398,
+          0.6229949653148651
+        ]
+      },
+      "static": {
+        "auc": 0.738780677318573,
+        "ci": [
+          0.6970823228359222,
+          0.776373864710331
+        ]
+      }
+    },
+    "delta_auc": {
+      "lr_vs_padua": {
+        "estimate": 0.2350387148410082,
+        "ci": [
+          0.1705216184258461,
+          0.2968394011259078
+        ],
+        "p_two_sided": 0.0
+      },
+      "xgb_vs_padua": {
+        "estimate": 0.2717408134490252,
+        "ci": [
+          0.20678034722805022,
+          0.3340718790888786
+        ],
+        "p_two_sided": 0.0
+      },
+      "xgb_vs_static": {
+        "estimate": 0.104894886136055,
+        "ci": [
+          0.06195578575134277,
+          0.149173629283905
+        ],
+        "p_two_sided": 0.0
+      }
+    },
+    "nri": {
+      "lr_vs_padua_thr0.005": {
+        "point": 1.4692284978364467,
+        "ci": [
+          1.4094577368510295,
+          1.5149202606939944
+        ]
+      },
+      "lr_vs_padua_thr0.01": {
+        "point": 1.2445350231629253,
+        "ci": [
+          1.188788955082955,
+          1.2947391034166515
+        ]
+      },
+      "xgb_vs_padua_thr0.005": {
+        "point": 1.3767106828513436,
+        "ci": [
+          1.3172706238014906,
+          1.4214975734819468
+        ]
+      },
+      "xgb_vs_padua_thr0.01": {
+        "point": 1.1134405146632322,
+        "ci": [
+          1.0605899325251524,
+          1.1633126657289024
+        ]
+      },
+      "xgb_vs_static_thr0.005": {
+        "point": 0.7722742153287961,
+        "ci": [
+          0.6827898993162779,
+          0.8667170394938337
+        ]
+      },
+      "xgb_vs_static_thr0.01": {
+        "point": 0.8045272604483678,
+        "ci": [
+          0.719781923245614,
+          0.8878602096933078
+        ]
+      }
+    },
+    "idi": {
+      "lr_vs_padua": {
+        "point": 0.042019568383693695,
+        "ci": [
+          0.031868076603859666,
+          0.054035248141735784
+        ]
+      },
+      "xgb_vs_padua": {
+        "point": 0.0996561273932457,
+        "ci": [
+          0.07408580593764783,
+          0.13146290555596352
+        ]
+      },
+      "xgb_vs_static": {
+        "point": 0.09437509626150131,
+        "ci": [
+          0.06901274770498275,
+          0.1259858258068561
+        ]
+      }
+    }
+  },
+  "meta": {
+    "features": [
+      "age",
+      "male",
+      "bmi",
+      "cancer_active",
+      "heart_failure",
+      "copd",
+      "chronic_liver",
+      "ckd",
+      "diabetes",
+      "stroke",
+      "mi",
+      "obesity_icd",
+      "varicose",
+      "thrombophilia",
+      "infection_severe",
+      "rheumatologic",
+      "prior_vte",
+      "adm_elective",
+      "adm_emergency",
+      "first_careunit_icu",
+      "prior_admissions_n",
+      "hours_since_adm",
+      "last_wbc",
+      "last_wbc_age_h",
+      "cum_wbc_median",
+      "cum_wbc_count",
+      "trend_wbc",
+      "last_platelet",
+      "last_platelet_age_h",
+      "cum_platelet_median",
+      "cum_platelet_count",
+      "trend_platelet",
+      "last_rdw",
+      "last_rdw_age_h",
+      "cum_rdw_median",
+      "cum_rdw_count",
+      "trend_rdw",
+      "last_hemoglobin",
+      "last_hemoglobin_age_h",
+      "cum_hemoglobin_median",
+      "cum_hemoglobin_count",
+      "trend_hemoglobin",
+      "last_creatinine",
+      "last_creatinine_age_h",
+      "cum_creatinine_median",
+      "cum_creatinine_count",
+      "trend_creatinine",
+      "last_bun",
+      "last_bun_age_h",
+      "cum_bun_median",
+      "cum_bun_count",
+      "trend_bun",
+      "last_inr",
+      "last_inr_age_h",
+      "cum_inr_median",
+      "cum_inr_count",
+      "trend_inr",
+      "last_pt",
+      "last_pt_age_h",
+      "cum_pt_median",
+      "cum_pt_count",
+      "trend_pt",
+      "last_aptt",
+      "last_aptt_age_h",
+      "cum_aptt_median",
+      "cum_aptt_count",
+      "trend_aptt",
+      "last_heart_rate_mean",
+      "last_heart_rate_worst",
+      "last_sbp_mean",
+      "last_sbp_worst",
+      "last_dbp_mean",
+      "last_dbp_worst",
+      "last_resp_rate_mean",
+      "last_resp_rate_worst",
+      "last_spo2_mean",
+      "last_spo2_worst",
+      "last_temperature_mean",
+      "last_temperature_worst",
+      "last_heart_rate_age_h",
+      "last_sbp_age_h",
+      "last_dbp_age_h",
+      "last_resp_rate_age_h",
+      "last_spo2_age_h",
+      "last_temperature_age_h",
+      "rx_heparin_last24h",
+      "rx_warfarin_last24h",
+      "rx_doac_last24h",
+      "rx_antiplatelet_last24h",
+      "proc_cvc_cum",
+      "proc_mechvent_cum",
+      "proc_transfusion_cum"
+    ],
+    "n_pool_undersampled": 100385,
+    "n_events_pool": 2377,
+    "n_eval": 980525,
+    "n_events_eval": 2377,
+    "cv": "StratifiedGroupKFold 3x5 (seeds 42/43/44) on undersampled train+val view, stratify label, group subject_id; fold bootstrap 2000 for fold-mean AUC CI; fold metrics on undersampled view, seed42 OOF predicted on full eval view",
+    "lr": "L2 C=1.0 max_iter=2000, no scaling, per-fold training-median imputation, no class_weight",
+    "xgb": {
+      "n_estimators": 300,
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "subsample": 0.8,
+      "colsample_bytree": 0.8,
+      "min_child_weight": 5,
+      "reg_lambda": 1,
+      "eval_metric": "logloss",
+      "scale_pos_weight": 1,
+      "tree_method": "hist",
+      "n_jobs": -1,
+      "random_state": 42
+    }
+  }
+}

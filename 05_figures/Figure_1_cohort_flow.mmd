@@ -1,0 +1,30 @@
+flowchart TD
+    A["1. MIMIC-IV adult admissions: 425,090<br/>(age ≥18 y, length of stay >24 h)"]
+    B["2. Ascertain PE from radiology reports<br/>(CTPA + expert-adjudicated Ext-PE)"]
+    C["3. Ascertain DVT from radiology reports<br/>(lower-extremity duplex / CT venography)"]
+    D["4. New in-hospital VTE cases (first diagnosis >24 h<br/>after admission): PE 507, DVT 183, both 16 → 674"]
+    E["5. Retain admissions with prior VTE<br/>(15,070 admissions; 47 events)"]
+    F["6. Exclude ICD-only (no radiological confirmation, 11,624)<br/>and 24-h-window cases (1,471); 11,684 distinct"]
+    G["7. Final analytic cohort: 413,406 admissions"]
+    H["Without an event: 412,732"]
+    I["New in-hospital VTE: 674 (0.163%)<br/>PE 507, DVT 183, both 16"]
+
+    A --> B
+    A --> C
+    B --> D
+    C --> D
+    A --> E
+    D --> F
+    E --> F
+    F --> G
+    G --> H
+    G --> I
+
+    classDef final fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+    classDef case fill:#e3f2fd,stroke:#1565c0,stroke-width:1.5px;
+    classDef ctrl fill:#fff3e0,stroke:#ef6c00,stroke-width:1.5px;
+    classDef excl fill:#f3e5f5,stroke:#7b1fa2,stroke-width:1.5px;
+    class G,H,I final;
+    class B,C,D case;
+    class E ctrl;
+    class F excl;
