@@ -1,6 +1,6 @@
 # Analysis code: ML versus Padua/IMPROVE for in-hospital VTE prediction
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22159012.svg)](https://doi.org/10.5281/zenodo.22159012)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22168152.svg)](https://doi.org/10.5281/zenodo.22168152)
 
 Code for: *Machine learning versus the Padua and IMPROVE scores for prediction of
 radiologically confirmed in-hospital venous thromboembolism: development and
@@ -69,7 +69,7 @@ PhysioNet Data Use Agreement; the external validation data are not available.
 
 If you use this code, please cite the accompanying manuscript and the code release:
 
-> Feng J, Li Y, Yu S, Shi J, Sun X. Analysis code for machine learning versus the Padua and IMPROVE scores for prediction of radiologically confirmed in-hospital venous thromboembolism (version 1.0). Zenodo, 2026. doi: [10.5281/zenodo.22159012](https://doi.org/10.5281/zenodo.22159012)
+> Feng J, Li Y, Yu S, Shi J, Sun X. Analysis code for machine learning versus the Padua and IMPROVE scores for prediction of radiologically confirmed in-hospital venous thromboembolism (version 1.0.1). Zenodo, 2026. doi: [10.5281/zenodo.22168152](https://doi.org/10.5281/zenodo.22168152)
 
 ## Contact
 
