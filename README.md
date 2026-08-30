@@ -21,7 +21,7 @@ Run in order from the repository root with `RES=results_vte` paths as described 
 | 2. Features | `02_features/` | 57 static admission-window features; 92 time-updated dynamic landmark features (48 h onward, 24 h refresh); `feature_sets_v2.json` defines the feature sets |
 | 3. Models | `03_models/` | Static LR/XGBoost (`static/`), dynamic landmark LR/XGBoost (`dynamic/`), GRU sequence model (`gru/`; `48e` is the GPU/MPS re-run of the seed protocol) |
 | 4. Evaluation | `04_evaluation/` | Calibration + decision curves, temporal/subgroup/strict-control/ED-vitals/service/prior-VTE analyses, threshold operating characteristics |
-| 5. Figures | `05_figures/` | Cohort flow diagram (`make_fig1.py`, Mermaid source) and publication figures |
+| 5. Figures | `05_figures/` | Publication figures (Figure 2 calibration, Figure 3 DCA) and the cohort flow diagram source (`Figure_1_cohort_flow.mmd`, Mermaid) |
 | 6. ICD-outcome sensitivity | `06_sensitivity_icd_outcome/` | ICD-code-based outcome definition (2×2 matrix, Table S7) |
 | 7. Aggregated results | `07_results_summary/` | JSON summary outputs corresponding to manuscript tables/figures |
 
