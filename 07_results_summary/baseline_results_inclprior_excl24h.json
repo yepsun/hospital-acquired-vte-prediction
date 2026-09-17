@@ -1,30 +1,30 @@
 {
-  "n_test": 72527,
+  "n_test": 66656,
   "n_events": 120,
   "padua": {
-    "test_auc": 0.7441057724621469,
-    "test_auprc": 0.005151503766456792,
-    "brier": 0.0016493617445324869,
+    "test_auc": 0.7505841449240511,
+    "test_auprc": 0.005931118917464199,
+    "brier": 0.0017938111545615226,
     "brier_method": "score calibrated to probability via univariate logistic regression fit on the test set (in-sample)",
     "high_risk": {
       "sensitivity": 0.7583333333333333,
-      "specificity": 0.6127170024997584,
-      "ppv": 0.0032346354814630504,
-      "npv": 0.9993467585709781,
-      "n_high_risk": 28133
+      "specificity": 0.6239178790429242,
+      "ppv": 0.0036234769451302063,
+      "npv": 0.9993019113186654,
+      "n_high_risk": 25114
     }
   },
   "improve": {
-    "test_auc": 0.739496469033841,
-    "test_auprc": 0.005392913318843062,
-    "brier": 0.0016489602956029708,
+    "test_auc": 0.7410017384072782,
+    "test_auprc": 0.005937072769758206,
+    "brier": 0.0017935103951316022,
     "brier_method": "score calibrated to probability via univariate logistic regression fit on the test set (in-sample)",
     "high_risk": {
       "sensitivity": 0.4666666666666667,
-      "specificity": 0.845443120140318,
-      "ppv": 0.004979105539254913,
-      "npv": 0.9989556135770234,
-      "n_high_risk": 11247
+      "specificity": 0.8464891186725982,
+      "ppv": 0.005452775073028238,
+      "npv": 0.9988649664810414,
+      "n_high_risk": 10270
     }
   }
 }

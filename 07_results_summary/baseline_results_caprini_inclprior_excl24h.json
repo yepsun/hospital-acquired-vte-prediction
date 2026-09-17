@@ -1,0 +1,66 @@
+{
+  "n_test": 66656,
+  "n_events": 120,
+  "test_event_rate": 0.001800288046087374,
+  "cohort": "era primary inclprior_excl24h (2008-2019)",
+  "padua": {
+    "test_auc": 0.7505841449240511,
+    "test_auprc": 0.005931118917464199,
+    "brier": 0.0017938111545615226,
+    "brier_method": "score calibrated to probability via univariate logistic regression fit on the test set (in-sample)",
+    "auprc_baseline_prevalence": 0.001800288046087374,
+    "high_risk": {
+      "sensitivity": 0.7583333333333333,
+      "specificity": 0.6239178790429242,
+      "ppv": 0.0036234769451302063,
+      "npv": 0.9993019113186654,
+      "n_high_risk": 25114,
+      "pct_high_risk": 0.37677028324531925
+    }
+  },
+  "improve": {
+    "test_auc": 0.7410017384072782,
+    "test_auprc": 0.005937072769758206,
+    "brier": 0.0017935103951316022,
+    "brier_method": "score calibrated to probability via univariate logistic regression fit on the test set (in-sample)",
+    "auprc_baseline_prevalence": 0.001800288046087374,
+    "high_risk": {
+      "sensitivity": 0.4666666666666667,
+      "specificity": 0.8464891186725982,
+      "ppv": 0.005452775073028238,
+      "npv": 0.9988649664810414,
+      "n_high_risk": 10270,
+      "pct_high_risk": 0.15407465194431108
+    }
+  },
+  "improve_dd": {
+    "test_auc": 0.7403810844254739,
+    "test_auprc": 0.005955661045415291,
+    "brier": 0.0017932457202477735,
+    "brier_method": "score calibrated to probability via univariate logistic regression fit on the test set (in-sample)",
+    "auprc_baseline_prevalence": 0.001800288046087374,
+    "high_risk": {
+      "sensitivity": 0.4666666666666667,
+      "specificity": 0.8457977636166887,
+      "ppv": 0.005428460643660334,
+      "npv": 0.9988640397586085,
+      "n_high_risk": 10316,
+      "pct_high_risk": 0.15476476236197792
+    }
+  },
+  "caprini": {
+    "test_auc": 0.7377050894753717,
+    "test_auprc": 0.0055023553674558075,
+    "brier": 0.0017948410295656639,
+    "brier_method": "score calibrated to probability via univariate logistic regression fit on the test set (in-sample)",
+    "auprc_baseline_prevalence": 0.001800288046087374,
+    "high_risk": {
+      "sensitivity": 0.6833333333333333,
+      "specificity": 0.6630245280750271,
+      "ppv": 0.0036439585833000043,
+      "npv": 0.9991393563291282,
+      "n_high_risk": 22503,
+      "pct_high_risk": 0.3375990158425348
+    }
+  }
+}

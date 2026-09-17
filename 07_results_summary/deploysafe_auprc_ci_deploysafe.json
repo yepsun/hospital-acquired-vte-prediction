@@ -1,0 +1,85 @@
+{
+  "method": "patient-level cluster bootstrap, subject_id resampled with replacement, ALL rows of sampled subjects retained (no negative cap), 2000 replicates; pooled-OOF average precision of the seed-42 5-fold StratifiedGroupKFold predictions; rng seed 42. Difference from the capped AUC bootstrap: the 50k negative cap inflates replicate prevalence and is valid for rank-based AUC only, not for average precision.",
+  "n_replicates": 2000,
+  "n_pool": 313064,
+  "n_events": 554,
+  "arms": {
+    "main_57": {
+      "n_features": 57,
+      "lr": {
+        "auprc": 0.012750370672029852,
+        "ci": [
+          0.009899310929567445,
+          0.018274840252075097
+        ],
+        "n_replicates_used": 2000
+      },
+      "xgb": {
+        "auprc": 0.012540047188630558,
+        "ci": [
+          0.009918703956198035,
+          0.01812665084631561
+        ],
+        "n_replicates_used": 2000
+      }
+    },
+    "strict_42": {
+      "n_features": 42,
+      "lr": {
+        "auprc": 0.0072460365766497635,
+        "ci": [
+          0.006132231320563481,
+          0.008882936535827736
+        ],
+        "n_replicates_used": 2000
+      },
+      "xgb": {
+        "auprc": 0.00960992097393851,
+        "ci": [
+          0.007932801009354269,
+          0.012545468227225267
+        ],
+        "n_replicates_used": 2000
+      }
+    },
+    "conservative_40": {
+      "n_features": 40,
+      "lr": {
+        "auprc": 0.006933539152759973,
+        "ci": [
+          0.005888877185838541,
+          0.00870065648910221
+        ],
+        "n_replicates_used": 2000
+      },
+      "xgb": {
+        "auprc": 0.009096024887834554,
+        "ci": [
+          0.007443686018691276,
+          0.011751483499761085
+        ],
+        "n_replicates_used": 2000
+      }
+    },
+    "strict44_surgtrauma": {
+      "n_features": 44,
+      "lr": {
+        "auprc": 0.008123305383011925,
+        "ci": [
+          0.006721614768060465,
+          0.010235623281343666
+        ],
+        "n_replicates_used": 2000
+      },
+      "xgb": {
+        "auprc": 0.00990432851752138,
+        "ci": [
+          0.008135415146191679,
+          0.012862819290301674
+        ],
+        "n_replicates_used": 2000
+      }
+    }
+  },
+  "runtime_s": 505.4
+}

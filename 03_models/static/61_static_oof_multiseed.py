@@ -8,7 +8,7 @@ plus raw Padua and IMPROVE scores on the same rows. Patient-level cluster
 bootstrap (2000 reps, negatives capped at 50k) gives delta-AUC vs Padua and
 vs IMPROVE per seed.
 
-Output: results_vte/ajm/new/output/static_oof_multiseed_inclprior_excl24h.json
+Output: results_vte/ajm/new/output_era/static_oof_multiseed_inclprior_excl24h.json
 """
 import json, warnings
 
@@ -33,10 +33,10 @@ XGB_PARAMS = dict(n_estimators=300, max_depth=3, learning_rate=0.05,
                   tree_method='hist', n_jobs=-1)
 
 fs = json.load(open(f'{RES}/feature_sets_v2.json'))
-splits = json.load(open(f'{RES}/ajm/new/data/primary_inclprior_excl24h_splits.json'))
+splits = json.load(open(f'{RES}/ajm/new/data_era/primary_inclprior_excl24h_splits.json'))
 FEATS = fs['main']
 
-df = pd.read_parquet(f'{RES}/ajm/new/data/primary_inclprior_excl24h_model_dataset.parquet')
+df = pd.read_parquet(f'{RES}/ajm/new/data_era/primary_inclprior_excl24h_model_dataset.parquet')
 pool_ids = set(splits['train']) | set(splits['val'])
 pool = df[df['hadm_id'].isin(pool_ids)].reset_index(drop=True)
 X = pool[FEATS].values.astype(np.float32)
@@ -140,7 +140,7 @@ for seed in SEEDS:
               f"[{d['ci'][0]:+.4f},{d['ci'][1]:+.4f}] p={d['p_two_sided']:.4f}",
               flush=True)
 
-with open(f'{RES}/ajm/new/output/static_oof_multiseed_inclprior_excl24h.json', 'w') as f:
+with open(f'{RES}/ajm/new/output_era/static_oof_multiseed_inclprior_excl24h.json', 'w') as f:
     json.dump(results, f, indent=2)
-print('Saved -> results_vte/ajm/new/output/static_oof_multiseed_inclprior_excl24h.json',
+print('Saved -> results_vte/ajm/new/output_era/static_oof_multiseed_inclprior_excl24h.json',
       flush=True)

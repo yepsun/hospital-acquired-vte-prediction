@@ -1,0 +1,25 @@
+{
+  "prior_vte_0": {
+    "n": 284674,
+    "events": 480,
+    "auc_padua": 0.7170736546455356,
+    "auc_lr": 0.7971851277941594,
+    "auc_xgb": 0.8166369297909175,
+    "delta_xgb_vs_padua": 0.09956327514538188,
+    "delta_lr_vs_padua": 0.08011147314862377
+  },
+  "prior_vte_1": {
+    "n": 28390,
+    "events": 74,
+    "auc_padua": 0.5946420799242524,
+    "auc_lr": 0.7309407249458811,
+    "auc_xgb": 0.7197587649805477,
+    "delta_xgb_vs_padua": 0.12511668505629525,
+    "delta_lr_vs_padua": 0.1362986450216287
+  },
+  "meta": {
+    "cohort": "inclprior_excl24h pool",
+    "seed": 42,
+    "note": "seed-42 5-fold OOF; AUC within prior_vte_any strata"
+  }
+}

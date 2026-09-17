@@ -1,19 +1,21 @@
 flowchart TD
     A["1. MIMIC-IV adult admissions: 425,090<br/>(age ≥18 y, length of stay >24 h)"]
-    B["2. Ascertain PE from radiology reports<br/>(CTPA + expert-adjudicated Ext-PE)"]
-    C["3. Ascertain DVT from radiology reports<br/>(lower-extremity duplex / CT venography)"]
-    D["4. New in-hospital VTE cases (first diagnosis >24 h<br/>after admission): PE 507, DVT 183, both 16 → 674"]
-    E["5. Retain admissions with prior VTE<br/>(15,070 admissions; 47 events)"]
-    F["6. Exclude ICD-only (no radiological confirmation, 11,624)<br/>and 24-h-window cases (1,471); 11,684 distinct"]
-    G["7. Final analytic cohort: 413,406 admissions"]
-    H["Without an event: 412,732"]
-    I["New in-hospital VTE: 674 (0.163%)<br/>PE 507, DVT 183, both 16"]
+    A0["2. Restrict to radiology-report-covered era<br/>(anchor years 2008–2019; 35,552 admissions from 2020–2022<br/>without radiology reports excluded): 389,538"]
+    B["3. Ascertain PE from radiology reports<br/>(CTPA + expert-adjudicated Ext-PE)"]
+    C["4. Ascertain DVT from radiology reports<br/>(lower-extremity duplex / CT venography)"]
+    D["5. New in-hospital VTE cases (first diagnosis >24 h<br/>after admission): PE 507, DVT 183, both 16 → 674"]
+    E["6. Retain admissions with prior VTE<br/>(34,109 admissions; 96 events)"]
+    F["7. Exclude ICD-only (no radiological confirmation, 9,758)<br/>and 24-h-window cases (1,471); 9,818 distinct"]
+    G["8. Final analytic cohort: 379,720 admissions"]
+    H["Without an event: 379,046"]
+    I["New in-hospital VTE: 674 (0.178%)<br/>PE 507, DVT 183, both 16"]
 
-    A --> B
-    A --> C
+    A --> A0
+    A0 --> B
+    A0 --> C
     B --> D
     C --> D
-    A --> E
+    A0 --> E
     D --> F
     E --> F
     F --> G

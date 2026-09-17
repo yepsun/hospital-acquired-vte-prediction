@@ -63,13 +63,13 @@ assert N_CH == 37
 
 # ── load views ──
 print('loading views ...', flush=True)
-mdf_all = pd.read_parquet(f'{RES}/ajm/new/data/primary_inclprior_excl24h_model_dataset.parquet',
+mdf_all = pd.read_parquet(f'{RES}/ajm/new/data_era/primary_inclprior_excl24h_model_dataset.parquet',
                           columns=['hadm_id', 'vte_event'])
 lab_map = dict(zip(mdf_all['hadm_id'], mdf_all['vte_event'].astype(int)))
-_sp = json.load(open(f'{RES}/ajm/new/data/primary_inclprior_excl24h_splits.json'))
+_sp = json.load(open(f'{RES}/ajm/new/data_era/primary_inclprior_excl24h_splits.json'))
 pool_ids_all = set(_sp['train']) | set(_sp['val'])
-tr_df = pd.read_parquet(f'{RES}/ajm/new/data/landmark_features_train_inclprior_excl24h.parquet')
-ev_df = pd.read_parquet(f'{RES}/ajm/new/data/landmark_features_inclprior_excl24h.parquet')
+tr_df = pd.read_parquet(f'{RES}/ajm/new/data_era/landmark_features_train_inclprior_excl24h.parquet')
+ev_df = pd.read_parquet(f'{RES}/ajm/new/data_era/landmark_features_inclprior_excl24h.parquet')
 tr_df = tr_df[tr_df['hadm_id'].isin(pool_ids_all)].reset_index(drop=True)
 ev_df = ev_df[ev_df['hadm_id'].isin(pool_ids_all)].reset_index(drop=True)
 tr_df['label'] = tr_df['hadm_id'].map(lab_map).astype(int)
@@ -85,7 +85,7 @@ print(f'train view {tr_df.shape} events={y.sum()} | eval view {ev_df.shape} '
 # ── static features (57 main cols) ──
 fs = json.load(open(f'{RES}/feature_sets_v2.json'))
 STATIC_FEATS = fs['main']
-sdf = pd.read_parquet(f'{RES}/ajm/new/data/primary_inclprior_excl24h_model_dataset.parquet',
+sdf = pd.read_parquet(f'{RES}/ajm/new/data_era/primary_inclprior_excl24h_model_dataset.parquet',
                       columns=['hadm_id'] + STATIC_FEATS)
 hadm2srow = {h: i for i, h in enumerate(sdf['hadm_id'].values)}
 S_all = sdf[STATIC_FEATS].values.astype(np.float32)
@@ -319,7 +319,7 @@ def ds(vals):
 # ── dynamic XGB seed42 OOF on eval view (delta comparator), precomputed
 # by scripts/48b_xgb_oof.py in a separate process (torch + XGBoost in one
 # process segfaults on macOS: duplicate OpenMP runtimes) ──
-oof_xgb_ev = np.load(f'{RES}/ajm/new/output/gru_xgb_oof_eval_inclprior_excl24h.npy')
+oof_xgb_ev = np.load(f'{RES}/ajm/new/output_era/gru_xgb_oof_eval_inclprior_excl24h.npy')
 print(f'XGB OOF eval AUC={roc_auc_score(yE, oof_xgb_ev):.4f} '
       '(precomputed by 48b)', flush=True)
 ev_pos = {}
@@ -469,7 +469,7 @@ results['meta'] = {
                 f'(MPS re-run of 48c CPU protocol)',
 }
 
-outp = f'{RES}/ajm/new/output/gru_results_inclprior_excl24h_mps_seed{SEED}.json'
+outp = f'{RES}/ajm/new/output_era/gru_results_inclprior_excl24h_mps_seed{SEED}.json'
 with open(outp, 'w') as f:
     json.dump(results, f, indent=2)
 print(f'Saved -> {outp}', flush=True)

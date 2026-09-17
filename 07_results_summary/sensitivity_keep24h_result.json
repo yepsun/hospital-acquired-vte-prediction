@@ -1,0 +1,232 @@
+{
+  "lr": {
+    "fold_mean_auc": 0.8477380517864419,
+    "fold_mean_auc_ci": [
+      0.8419305256877277,
+      0.853250118943508
+    ],
+    "fold_mean_auprc": 0.1193034442758794,
+    "fold_mean_brier": 0.004924401361495257,
+    "n_folds": 15,
+    "oof_auc": 0.8471984314225702,
+    "oof_auprc": 0.11540516858604516,
+    "oof_brier": 0.004921620370350343,
+    "oof_ece": 0.23451371696904114
+  },
+  "xgb": {
+    "fold_mean_auc": 0.8780226332102149,
+    "fold_mean_auc_ci": [
+      0.8736064787907638,
+      0.882186609187313
+    ],
+    "fold_mean_auprc": 0.1818171816957769,
+    "fold_mean_brier": 0.0046881038074692094,
+    "n_folds": 15,
+    "oof_auc": 0.8769703249425673,
+    "oof_auprc": 0.1801151008259125,
+    "oof_brier": 0.004680915634502204,
+    "oof_ece": 0.11189938590696887
+  },
+  "padua_pool": {
+    "oof_auc": 0.6407083368485966,
+    "oof_auprc": 0.009607167109138347,
+    "oof_brier": 0.005225029985447113,
+    "oof_ece": 4.9768420711847686e-05,
+    "note": "raw score for AUC/AUPRC; probability via univariate logistic calibration fit on the pool for Brier/ECE/NRI/IDI"
+  },
+  "oof_inference": {
+    "method": "patient-level cluster bootstrap (subject_id), 2000 replicates; negatives downsampled to 50k per replicate, AUC via Mann-Whitney rank statistic; NRI/IDI use Padua probability from univariate logistic calibration on the pool",
+    "n_replicates_used": 2000,
+    "oof_auc_ci": {
+      "lr": {
+        "auc": 0.8471984314225702,
+        "ci": [
+          0.8353986625119016,
+          0.8587424978813559
+        ]
+      },
+      "xgb": {
+        "auc": 0.8769703249425673,
+        "ci": [
+          0.8668184652040378,
+          0.8863368674595308
+        ]
+      },
+      "padua": {
+        "auc": 0.6407083368485966,
+        "ci": [
+          0.6262988031596781,
+          0.6549025917328605
+        ]
+      }
+    },
+    "delta_auc": {
+      "lr_vs_padua": {
+        "estimate": 0.20652556048787252,
+        "ci": [
+          0.18861856244336156,
+          0.22433488103968938
+        ],
+        "p_two_sided": 0.0
+      },
+      "xgb_vs_padua": {
+        "estimate": 0.23634418452317255,
+        "ci": [
+          0.2203493102375099,
+          0.25209487467963554
+        ],
+        "p_two_sided": 0.0
+      },
+      "xgb_vs_lr": {
+        "estimate": 0.02981862403530002,
+        "ci": [
+          0.023110457206831105,
+          0.03687477815519379
+        ],
+        "p_two_sided": 0.0
+      }
+    },
+    "nri": {
+      "lr_vs_padua_thr0.005": {
+        "point": 0.32366870702590644,
+        "ci": [
+          0.29166252162641243,
+          0.35616792732177893
+        ]
+      },
+      "lr_vs_padua_thr0.01": {
+        "point": 0.4383503421857706,
+        "ci": [
+          0.4099489339089335,
+          0.46596877109561624
+        ]
+      },
+      "xgb_vs_padua_thr0.005": {
+        "point": 0.37162063931590966,
+        "ci": [
+          0.34132545294437644,
+          0.4030047398598783
+        ]
+      },
+      "xgb_vs_padua_thr0.01": {
+        "point": 0.45830867627237465,
+        "ci": [
+          0.43047186601127385,
+          0.4864514569591462
+        ]
+      },
+      "xgb_vs_lr_thr0.005": {
+        "point": 0.04795193229000319,
+        "ci": [
+          0.03001260669152683,
+          0.06434283838690114
+        ]
+      },
+      "xgb_vs_lr_thr0.01": {
+        "point": 0.019958334086604034,
+        "ci": [
+          0.004859196525708155,
+          0.035088882268078984
+        ]
+      }
+    },
+    "idi": {
+      "lr_vs_padua": {
+        "point": 0.06987510005152185,
+        "ci": [
+          0.06416141358694472,
+          0.07601662175179225
+        ]
+      },
+      "xgb_vs_padua": {
+        "point": 0.10022460905201505,
+        "ci": [
+          0.09246875025538599,
+          0.10782650089760104
+        ]
+      },
+      "xgb_vs_lr": {
+        "point": 0.030349509000493193,
+        "ci": [
+          0.025304705804007642,
+          0.03541546518215853
+        ]
+      }
+    }
+  },
+  "test_set": {
+    "n": 64521,
+    "events": 325,
+    "lr_auc": 0.8690170966798795,
+    "xgb_auc": 0.8904644190627741,
+    "padua_auc": 0.6264993745117118
+  },
+  "meta": {
+    "tag": "keep24h",
+    "n_all": 366687,
+    "n_kept": 366687,
+    "n_excluded_prior_vte": 20031,
+    "features": [
+      "lab_wbc_median",
+      "lab_wbc_count",
+      "lab_neutrophils_count",
+      "lab_lymphocytes_count",
+      "lab_platelet_median",
+      "lab_platelet_count",
+      "lab_rdw_median",
+      "lab_rdw_count",
+      "lab_hemoglobin_median",
+      "lab_hemoglobin_count",
+      "lab_ddimer_count",
+      "lab_inr_median",
+      "lab_inr_count",
+      "lab_pt_median",
+      "lab_pt_count",
+      "lab_aptt_median",
+      "lab_aptt_count",
+      "lab_fibrinogen_count",
+      "lab_creatinine_median",
+      "lab_creatinine_count",
+      "lab_bun_median",
+      "lab_bun_count",
+      "lab_albumin_count",
+      "lab_crp_count",
+      "bmi",
+      "age",
+      "male",
+      "cancer_active",
+      "heart_failure",
+      "copd",
+      "chronic_liver",
+      "ckd",
+      "diabetes",
+      "stroke",
+      "mi",
+      "obesity_icd",
+      "varicose",
+      "thrombophilia",
+      "infection_severe",
+      "rheumatologic",
+      "prior_vte",
+      "prior_vte_any",
+      "adm_elective",
+      "adm_emergency",
+      "first_careunit_icu",
+      "prior_admissions_n",
+      "surgery_flag",
+      "trauma_flag",
+      "rx_heparin",
+      "rx_warfarin",
+      "rx_doac",
+      "rx_antiplatelet",
+      "rx_hormone",
+      "proc_cvc",
+      "proc_mechvent",
+      "proc_transfusion",
+      "icu_los_first24h"
+    ],
+    "n_pool": 302166,
+    "n_events": 1590,
+    "cv": "StratifiedGroupKFold 3x5 (seeds 42/43/44), stratify vte_event, group subject_id; fold bootstrap 2000 for fold-mean AUC CI"
+  }
+}

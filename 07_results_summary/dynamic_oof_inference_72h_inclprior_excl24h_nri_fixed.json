@@ -1,0 +1,174 @@
+{
+  "arm": "72h landmark, inclprior_excl24h",
+  "source_npz": "results_vte/ajm/new/output_era/dynamic_oof_inputs_72h_inclprior_excl24h.npz",
+  "n_rows": 860179,
+  "n_events": 2377,
+  "n_subjects": 75203,
+  "bug": "47b_bootstrap_only.py used NRI = (up_e-dn_e) + (up_n-dn_n); non-event component sign reversed. Corrected here to the standard Pencina definition (up_e-dn_e) + (dn_n-up_n).",
+  "n_replicates_used": 2000,
+  "oof_auc_ci": {
+    "lr": {
+      "auc": 0.8118506073951721,
+      "ci": [
+        0.7783878803253174,
+        0.8421007126569748
+      ]
+    },
+    "xgb": {
+      "auc": 0.8489354848861694,
+      "ci": [
+        0.8216160759329796,
+        0.8737452954053879
+      ]
+    },
+    "padua": {
+      "auc": 0.5844242572784424,
+      "ci": [
+        0.5335049763321876,
+        0.6340832650661468
+      ]
+    },
+    "static": {
+      "auc": 0.7451801896095276,
+      "ci": [
+        0.707127970457077,
+        0.7800878524780274
+      ]
+    }
+  },
+  "delta_auc": {
+    "lr_vs_padua": {
+      "estimate": 0.22807983838021756,
+      "ci": [
+        0.1678733140230179,
+        0.28809851631522165
+      ],
+      "p_two_sided": 0.0
+    },
+    "xgb_vs_padua": {
+      "estimate": 0.26526926751434804,
+      "ci": [
+        0.20472519099712372,
+        0.3222528398036957
+      ],
+      "p_two_sided": 0.0
+    },
+    "xgb_vs_static": {
+      "estimate": 0.10464389869570732,
+      "ci": [
+        0.06826788336038589,
+        0.14301064014434814
+      ],
+      "p_two_sided": 0.0
+    }
+  },
+  "nri": {
+    "lr_vs_padua_thr0.005": {
+      "point": 0.3246949487654399,
+      "point_old_buggy": 1.417837655357404,
+      "components": {
+        "events_up": 0.8826251577618848,
+        "events_down": 0.011358855700462769,
+        "nonevents_down": 0.007318705248996854,
+        "nonevents_up": 0.5538900585449789
+      },
+      "ci": [
+        0.2576191402024314,
+        0.37832233479187666
+      ]
+    },
+    "lr_vs_padua_thr0.01": {
+      "point": 0.42935746532358215,
+      "point_old_buggy": 1.2812020634942556,
+      "components": {
+        "events_up": 0.8552797644089188,
+        "events_down": 0.0,
+        "nonevents_down": 0.0,
+        "nonevents_up": 0.4259222990853367
+      },
+      "ci": [
+        0.37958870425636676,
+        0.47581848477941247
+      ]
+    },
+    "xgb_vs_padua_thr0.005": {
+      "point": 0.3851153375408818,
+      "point_old_buggy": 1.3389065387738004,
+      "components": {
+        "events_up": 0.8758939840134623,
+        "events_down": 0.013883045856121162,
+        "nonevents_down": 0.008562582041077078,
+        "nonevents_up": 0.4854581826575364
+      },
+      "ci": [
+        0.31801099282089057,
+        0.4393769353758244
+      ]
+    },
+    "xgb_vs_padua_thr0.01": {
+      "point": 0.5219131941190289,
+      "point_old_buggy": 1.178549574076175,
+      "components": {
+        "events_up": 0.850231384097602,
+        "events_down": 0.0,
+        "nonevents_down": 0.0,
+        "nonevents_up": 0.32831818997857315
+      },
+      "ci": [
+        0.4717813062610231,
+        0.5628857294758941
+      ]
+    },
+    "xgb_vs_static_thr0.005": {
+      "point": 0.1381521352892695,
+      "point_old_buggy": 0.7352176585685345,
+      "components": {
+        "events_up": 0.44047118216238956,
+        "events_down": 0.0037862852334875894,
+        "nonevents_down": 0.05424095537198561,
+        "nonevents_up": 0.3527737170116181
+      },
+      "ci": [
+        0.05371175252367926,
+        0.23130202196777064
+      ]
+    },
+    "xgb_vs_static_thr0.01": {
+      "point": 0.285020888282024,
+      "point_old_buggy": 0.762518026316209,
+      "components": {
+        "events_up": 0.5376525031552377,
+        "events_down": 0.013883045856121162,
+        "nonevents_down": 0.030596804390756842,
+        "nonevents_up": 0.26934537340784936
+      },
+      "ci": [
+        0.19871818758173404,
+        0.37432967011768464
+      ]
+    }
+  },
+  "idi": {
+    "lr_vs_padua": {
+      "point": 0.04566223546862602,
+      "ci": [
+        0.036186345107853415,
+        0.05565765518695115
+      ]
+    },
+    "xgb_vs_padua": {
+      "point": 0.1061173751950264,
+      "ci": [
+        0.07885550372302533,
+        0.13769604898989202
+      ]
+    },
+    "xgb_vs_static": {
+      "point": 0.09990470111370087,
+      "ci": [
+        0.07277472596615553,
+        0.13079380169510837
+      ]
+    }
+  }
+}

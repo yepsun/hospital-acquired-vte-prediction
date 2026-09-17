@@ -1,0 +1,302 @@
+{
+  "version": "Caprini 2005 RAM (2010 restatement)",
+  "n": 425090,
+  "events": 1675,
+  "event_rate": 0.003940342045213954,
+  "mean": 3.86266672939848,
+  "sd": 2.565940552456023,
+  "median": 4.0,
+  "q1": 2.0,
+  "q3": 5.0,
+  "min": 0,
+  "max": 20,
+  "high_risk_threshold": 5,
+  "high_risk_prop": 0.35699734173939635,
+  "high_risk_n": 151756,
+  "moderate_plus_prop": 0.6742219294737585,
+  "score_counts": {
+    "0": 30118,
+    "1": 51723,
+    "2": 56644,
+    "3": 70642,
+    "4": 64207,
+    "5": 51252,
+    "6": 36612,
+    "7": 25444,
+    "8": 16706,
+    "9": 9795,
+    "10": 5634,
+    "11": 2976,
+    "12": 1677,
+    "13": 826,
+    "14": 421,
+    "15": 212,
+    "16": 108,
+    "17": 58,
+    "18": 20,
+    "19": 13,
+    "20": 2
+  },
+  "item_prevalence": {
+    "age_41_60": 0.308955750546943,
+    "minor_surgery": 0.0,
+    "bmi_gt25": 0.47879272624620667,
+    "swollen_legs": 0.0,
+    "varicose_veins": 0.0019242983838716507,
+    "pregnancy_postpartum": 0.0,
+    "recurrent_abortion": 0.0,
+    "oc_hrt": 0.006704462584393893,
+    "sepsis_lt1mo": 0.0508057117316333,
+    "serious_lung_disease": 0.0,
+    "abnormal_pulm_func": 0.14704180291232444,
+    "acute_mi_lt1mo": 0.03703921522501118,
+    "chf_lt1mo": 0.17320332164953303,
+    "ibd": 0.0,
+    "bed_rest_medical": 0.15517184596203157,
+    "age_61_74": 0.2748994330612341,
+    "arthroscopic_surgery": 0.0,
+    "major_surgery_gt45min": 0.24296266672939848,
+    "laparoscopic_surgery": 0.0,
+    "malignancy": 0.15209955538827072,
+    "confined_bed_gt72h": 0.0,
+    "immobilizing_cast": 0.0,
+    "central_venous_access": 0.034444470582700136,
+    "age_ge75": 0.21738690630219482,
+    "prior_dvt_pe": 0.0938413041944059,
+    "family_history": 0.0,
+    "factor_v_leiden": 0.0,
+    "prothrombin_20210a": 0.0,
+    "lupus_anticoagulant": 0.0,
+    "anticardiolipin": 0.0,
+    "homocysteine": 0.0,
+    "hit": 0.0,
+    "other_thrombophilia": 0.00931567432778941,
+    "stroke_lt1mo": 0.026516737632030864,
+    "elective_arthroplasty": 0.0,
+    "hip_pelvis_leg_fracture": 0.0,
+    "multiple_trauma": 0.0,
+    "acute_spinal_cord_injury": 0.0
+  },
+  "mapped_items": [
+    "abnormal_pulm_func",
+    "acute_mi_lt1mo",
+    "age_41_60",
+    "age_61_74",
+    "age_ge75",
+    "bed_rest_medical",
+    "bmi_gt25",
+    "central_venous_access",
+    "chf_lt1mo",
+    "major_surgery_gt45min",
+    "malignancy",
+    "oc_hrt",
+    "other_thrombophilia",
+    "prior_dvt_pe",
+    "sepsis_lt1mo",
+    "stroke_lt1mo",
+    "varicose_veins"
+  ],
+  "unmappable_items": [
+    "minor_surgery",
+    "swollen_legs",
+    "pregnancy_postpartum",
+    "recurrent_abortion",
+    "serious_lung_disease",
+    "ibd",
+    "arthroscopic_surgery",
+    "laparoscopic_surgery",
+    "confined_bed_gt72h",
+    "immobilizing_cast",
+    "family_history",
+    "factor_v_leiden",
+    "prothrombin_20210a",
+    "lupus_anticoagulant",
+    "anticardiolipin",
+    "homocysteine",
+    "hit",
+    "elective_arthroplasty",
+    "hip_pelvis_leg_fracture",
+    "multiple_trauma",
+    "acute_spinal_cord_injury"
+  ],
+  "sensitivity_trauma_flag_as_5pt": {
+    "mean": 4.88374461878661,
+    "high_risk_prop": 0.46586605189489283
+  },
+  "event_rate_by_band": {
+    "lowest (0)": {
+      "n": 30118,
+      "events": 8,
+      "event_rate": 0.00026562188724350887,
+      "share_of_cohort": 0.070850878637465
+    },
+    "low (1-2)": {
+      "n": 108367,
+      "events": 149,
+      "event_rate": 0.0013749573209556414,
+      "share_of_cohort": 0.2549271918887765
+    },
+    "moderate (3-4)": {
+      "n": 134849,
+      "events": 353,
+      "event_rate": 0.002617742808622978,
+      "share_of_cohort": 0.31722458773436213
+    },
+    "high (>=5)": {
+      "n": 151756,
+      "events": 1165,
+      "event_rate": 0.007676796963546746,
+      "share_of_cohort": 0.35699734173939635
+    }
+  },
+  "event_rate_by_score": {
+    "0": {
+      "n": 30118,
+      "events": 8,
+      "event_rate": 0.00026562188724350887
+    },
+    "1": {
+      "n": 51723,
+      "events": 51,
+      "event_rate": 0.0009860216924772345
+    },
+    "2": {
+      "n": 56644,
+      "events": 98,
+      "event_rate": 0.0017301038062283738
+    },
+    "3": {
+      "n": 70642,
+      "events": 148,
+      "event_rate": 0.002095070920981852
+    },
+    "4": {
+      "n": 64207,
+      "events": 205,
+      "event_rate": 0.00319279829302101
+    },
+    "5": {
+      "n": 51252,
+      "events": 216,
+      "event_rate": 0.00421446967923203
+    },
+    "6": {
+      "n": 36612,
+      "events": 223,
+      "event_rate": 0.006090899158745767
+    },
+    "7": {
+      "n": 25444,
+      "events": 214,
+      "event_rate": 0.008410627259864802
+    },
+    "8": {
+      "n": 16706,
+      "events": 153,
+      "event_rate": 0.009158386208547828
+    },
+    "9": {
+      "n": 9795,
+      "events": 126,
+      "event_rate": 0.012863705972434915
+    },
+    "10": {
+      "n": 5634,
+      "events": 84,
+      "event_rate": 0.014909478168264111
+    },
+    "11": {
+      "n": 2976,
+      "events": 50,
+      "event_rate": 0.016801075268817203
+    },
+    "12": {
+      "n": 1677,
+      "events": 43,
+      "event_rate": 0.02564102564102564
+    },
+    "13": {
+      "n": 826,
+      "events": 23,
+      "event_rate": 0.02784503631961259
+    },
+    "14": {
+      "n": 421,
+      "events": 14,
+      "event_rate": 0.0332541567695962
+    },
+    "15": {
+      "n": 212,
+      "events": 7,
+      "event_rate": 0.0330188679245283
+    },
+    "16": {
+      "n": 108,
+      "events": 7,
+      "event_rate": 0.06481481481481481
+    },
+    "17": {
+      "n": 58,
+      "events": 1,
+      "event_rate": 0.017241379310344827
+    },
+    "18": {
+      "n": 20,
+      "events": 3,
+      "event_rate": 0.15
+    },
+    "19": {
+      "n": 13,
+      "events": 1,
+      "event_rate": 0.07692307692307693
+    },
+    "20": {
+      "n": 2,
+      "events": 0,
+      "event_rate": 0.0
+    }
+  },
+  "crude_high>=5": {
+    "event_rate_high": 0.007676796963546746,
+    "event_rate_low": 0.0018658491076851032,
+    "risk_ratio": 4.114371806341346,
+    "n_high": 151756,
+    "n_low": 273334
+  },
+  "crude_mod>=3": {
+    "event_rate_high": 0.0052964881980426025,
+    "event_rate_low": 0.001133696790266094,
+    "risk_ratio": 4.671873682203374,
+    "n_high": 286605,
+    "n_low": 138485
+  },
+  "comparison_on_same_rows": {
+    "caprini": {
+      "mean": 3.86266672939848,
+      "sd": 2.565937534339787,
+      "high_risk_prop": 0.35699734173939635,
+      "event_rate_high": 0.007676796963546746,
+      "event_rate_low": 0.0018658491076851032,
+      "risk_ratio": 4.114371806341346,
+      "auc": 0.7308958999154177
+    },
+    "padua": {
+      "mean": 3.2544378837422663,
+      "sd": 2.6264224938438776,
+      "high_risk_prop": 0.39895316285962973,
+      "event_rate_high": 0.0074945014770831,
+      "event_rate_low": 0.001581219495966716,
+      "risk_ratio": 4.739697111121918,
+      "auc": 0.7395439462465903
+    },
+    "improve": {
+      "mean": 1.5966007198475618,
+      "sd": 1.7883701708749837,
+      "high_risk_prop": 0.16410171963584183,
+      "event_rate_high": 0.009848332807706642,
+      "event_rate_low": 0.0027804982382673106,
+      "risk_ratio": 3.541930964805685,
+      "auc": 0.7047770753826254
+    }
+  }
+}

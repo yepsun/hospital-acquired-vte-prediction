@@ -14,8 +14,8 @@ NEG_CAP = 50_000
 NRI_THRESHOLDS = [0.005, 0.01]
 SEED = 42
 RES = 'results_vte'
-NPZ = f'{RES}/ajm/new/output/dynamic_oof_inputs_inclprior_excl24h.npz'
-OUT = f'{RES}/ajm/new/output/dynamic_oof_inference_inclprior_excl24h.json'
+NPZ = f'{RES}/ajm/new/output_era/dynamic_oof_inputs_inclprior_excl24h.npz'
+OUT = f'{RES}/ajm/new/output_era/dynamic_oof_inference_inclprior_excl24h.json'
 
 
 def fast_auc(yb, p):
@@ -25,11 +25,24 @@ def fast_auc(yb, p):
 
 
 def nri(p_old, p_new, yb, thr):
+    # SIGN FIX (2026-09-17). The non-event component previously entered with
+    # the opposite sign: the code added (up_n - dn_n) instead of (dn_n - up_n).
+    # Because the non-event component is large and negative at the sub-1%
+    # thresholds used here, that error roughly doubled NRI (e.g. XGBoost vs
+    # Padua at 0.5%: 1.3194 instead of 0.3888). The manuscript reports the
+    # corrected, standard Pencina (2008) category-based definition
+    #   [P(up|event) - P(down|event)] + [P(down|non-event) - P(up|non-event)],
+    # which is what scripts/98_ajm_sensitivity_cohorts.py and
+    # 47b_dynamic_models_v2.py already implement. Re-running this script now
+    # regenerates the corrected values; the previously published (inflated)
+    # JSON is preserved unchanged, and the corrected run is checkpointed in
+    # dynamic_oof_inference_inclprior_excl24h_nri_fixed.json.
     ev, nev = yb == 1, yb == 0
-    return float(((p_new >= thr) & (p_old < thr) & ev).sum() / ev.sum()
-                 - ((p_new < thr) & (p_old >= thr) & ev).sum() / ev.sum()
-                 + ((p_new >= thr) & (p_old < thr) & nev).sum() / nev.sum()
-                 - ((p_new < thr) & (p_old >= thr) & nev).sum() / nev.sum())
+    up_e = ((p_new >= thr) & (p_old < thr) & ev).sum()
+    dn_e = ((p_new < thr) & (p_old >= thr) & ev).sum()
+    up_n = ((p_new >= thr) & (p_old < thr) & nev).sum()
+    dn_n = ((p_new < thr) & (p_old >= thr) & nev).sum()
+    return float((up_e - dn_e) / ev.sum() + (dn_n - up_n) / nev.sum())
 
 
 def idi(p_old, p_new, yb):

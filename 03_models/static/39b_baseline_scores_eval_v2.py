@@ -22,8 +22,8 @@ from sklearn.metrics import roc_auc_score, average_precision_score, brier_score_
 RES = 'results_vte'
 
 fs = json.load(open(f'{RES}/feature_sets_v2.json'))
-splits = json.load(open(f'{RES}/ajm/new/data/primary_inclprior_excl24h_splits.json'))
-df = pd.read_parquet(f'{RES}/ajm/new/data/primary_inclprior_excl24h_model_dataset.parquet')
+splits = json.load(open(f'{RES}/ajm/new/data_era/primary_inclprior_excl24h_splits.json'))
+df = pd.read_parquet(f'{RES}/ajm/new/data_era/primary_inclprior_excl24h_model_dataset.parquet')
 
 test = df[df['hadm_id'].isin(set(splits['test']))]
 y = test['vte_event'].values.astype(int)
@@ -71,6 +71,6 @@ padua_auc = out['padua']['test_auc']
 if padua_auc < 0.55:
     print('WARNING: Padua AUC < 0.55 — re-check score computation', flush=True)
 
-with open(f'{RES}/ajm/new/output/baseline_results_inclprior_excl24h.json', 'w') as f:
+with open(f'{RES}/ajm/new/output_era/baseline_results_inclprior_excl24h.json', 'w') as f:
     json.dump(out, f, indent=2)
 print('Saved -> results_vte/baseline_results.json', flush=True)

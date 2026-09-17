@@ -1,0 +1,327 @@
+{
+  "lr": {
+    "fold_mean_auc": 0.7612925174819997,
+    "fold_mean_auc_ci": [
+      0.749033652950192,
+      0.7742877338493935
+    ],
+    "fold_mean_auprc": 0.09745701213311915,
+    "fold_mean_brier": 0.024367745717366537,
+    "n_folds": 15,
+    "oof_auc": 0.8142512879520138,
+    "oof_auprc": 0.01277919115276752,
+    "oof_brier": 0.0039016258501182767,
+    "oof_ece": 0.4816701620383125
+  },
+  "xgb": {
+    "fold_mean_auc": 0.8066273336254446,
+    "fold_mean_auc_ci": [
+      0.7943541966868964,
+      0.8199266068477193
+    ],
+    "fold_mean_auprc": 0.21544000120891307,
+    "fold_mean_brier": 0.022478751217325527,
+    "n_folds": 15,
+    "oof_auc": 0.8523142587690183,
+    "oof_auprc": 0.06350277589533353,
+    "oof_brier": 0.0033993677780717354,
+    "oof_ece": 0.2805240350751374
+  },
+  "padua_eval": {
+    "oof_auc": 0.5999995542472274,
+    "oof_auprc": 0.004061348836671008,
+    "oof_brier": 0.00261636248331723,
+    "oof_ece": 3.6911066701090546e-06,
+    "note": "Padua broadcast per hadm; raw score for AUC/AUPRC, probability via univariate logistic calibration on eval view"
+  },
+  "static57_eval": {
+    "oof_auc": 0.7553086150755607,
+    "oof_auprc": 0.008697930870678912,
+    "oof_brier": 0.0026460224978004545,
+    "oof_ece": 0.11286800087270195,
+    "note": "static seed-42 XGB OOF (admission level) broadcast to landmark rows; feature set main 57"
+  },
+  "static52_eval": {
+    "oof_auc": 0.7526343364171986,
+    "oof_auprc": 0.009901858961904588,
+    "oof_brier": 0.0026472754993681264,
+    "oof_ece": 0.041960513442822624,
+    "note": "static seed-42 XGB OOF (admission level) broadcast to landmark rows; feature set no-rx 52"
+  },
+  "oof_inference": {
+    "method": "patient-level cluster bootstrap (subject_id) on eval landmark view (train+val), 2000 reps; negatives downsampled 50k",
+    "n_replicates_used": 2000,
+    "oof_auc_ci": {
+      "lr": {
+        "auc": 0.8142512879520138,
+        "ci": [
+          0.7821046771732161,
+          0.8431924180535385
+        ]
+      },
+      "xgb": {
+        "auc": 0.8523142587690183,
+        "ci": [
+          0.8252838710510225,
+          0.876583837518708
+        ]
+      },
+      "padua": {
+        "auc": 0.5999995542472274,
+        "ci": [
+          0.5530737347428872,
+          0.6476084226728356
+        ]
+      },
+      "static52": {
+        "auc": 0.7526343364171985,
+        "ci": [
+          0.7183445281890178,
+          0.7845092735999853
+        ]
+      },
+      "static57": {
+        "auc": 0.7553086150755607,
+        "ci": [
+          0.723349829194974,
+          0.7862591513009178
+        ]
+      }
+    },
+    "delta_auc": {
+      "lr_vs_padua": {
+        "estimate": 0.2140545134832268,
+        "ci": [
+          0.15709695880749164,
+          0.269868354683158
+        ],
+        "p_two_sided": 0.0
+      },
+      "xgb_vs_padua": {
+        "estimate": 0.2520204275089961,
+        "ci": [
+          0.19492234076154072,
+          0.30661343322079765
+        ],
+        "p_two_sided": 0.0
+      },
+      "xgb_vs_static52": {
+        "estimate": 0.09977220334987814,
+        "ci": [
+          0.06778241382305779,
+          0.13299941593319603
+        ],
+        "p_two_sided": 0.0
+      },
+      "xgb_vs_static57": {
+        "estimate": 0.09696460003635664,
+        "ci": [
+          0.06333413777257632,
+          0.13168126127016497
+        ],
+        "p_two_sided": 0.0
+      }
+    },
+    "nri": {
+      "lr_vs_padua_thr0.005": {
+        "point": 0.3235298173968675,
+        "ci": [
+          0.2530439532939573,
+          0.38149223343724964
+        ]
+      },
+      "lr_vs_padua_thr0.01": {
+        "point": 0.42974921989607634,
+        "ci": [
+          0.3837208501986941,
+          0.4727857442158168
+        ]
+      },
+      "xgb_vs_padua_thr0.005": {
+        "point": 0.38824722374222737,
+        "ci": [
+          0.32463828877622225,
+          0.43771209679513
+        ]
+      },
+      "xgb_vs_padua_thr0.01": {
+        "point": 0.5143777355582906,
+        "ci": [
+          0.46675572638542173,
+          0.5566163791041532
+        ]
+      },
+      "xgb_vs_static52_thr0.005": {
+        "point": 0.08710196829536804,
+        "ci": [
+          0.010623183103343717,
+          0.16690617015702527
+        ]
+      },
+      "xgb_vs_static52_thr0.01": {
+        "point": 0.32675010313050523,
+        "ci": [
+          0.2513716129574628,
+          0.4032198259957299
+        ]
+      },
+      "xgb_vs_static57_thr0.005": {
+        "point": 0.12290833346171864,
+        "ci": [
+          0.03890435343571429,
+          0.20450019023441685
+        ]
+      },
+      "xgb_vs_static57_thr0.01": {
+        "point": 0.2748997521542491,
+        "ci": [
+          0.1870032382219989,
+          0.36223148043019465
+        ]
+      }
+    },
+    "idi": {
+      "lr_vs_padua": {
+        "point": 0.04895028832797925,
+        "ci": [
+          0.038956790531418935,
+          0.05871518337005582
+        ]
+      },
+      "xgb_vs_padua": {
+        "point": 0.1047338808515857,
+        "ci": [
+          0.08116035074256281,
+          0.13176263525157414
+        ]
+      },
+      "xgb_vs_static52": {
+        "point": 0.0983733430851082,
+        "ci": [
+          0.07515277608464682,
+          0.12466681631029038
+        ]
+      },
+      "xgb_vs_static57": {
+        "point": 0.09848751602214297,
+        "ci": [
+          0.074917591012817,
+          0.12498748914873548
+        ]
+      }
+    }
+  },
+  "meta": {
+    "features": [
+      "age",
+      "male",
+      "bmi",
+      "cancer_active",
+      "heart_failure",
+      "copd",
+      "chronic_liver",
+      "ckd",
+      "diabetes",
+      "stroke",
+      "mi",
+      "obesity_icd",
+      "varicose",
+      "thrombophilia",
+      "infection_severe",
+      "rheumatologic",
+      "prior_vte",
+      "adm_elective",
+      "adm_emergency",
+      "first_careunit_icu",
+      "prior_admissions_n",
+      "hours_since_adm",
+      "last_wbc",
+      "last_wbc_age_h",
+      "cum_wbc_median",
+      "cum_wbc_count",
+      "trend_wbc",
+      "last_platelet",
+      "last_platelet_age_h",
+      "cum_platelet_median",
+      "cum_platelet_count",
+      "trend_platelet",
+      "last_rdw",
+      "last_rdw_age_h",
+      "cum_rdw_median",
+      "cum_rdw_count",
+      "trend_rdw",
+      "last_hemoglobin",
+      "last_hemoglobin_age_h",
+      "cum_hemoglobin_median",
+      "cum_hemoglobin_count",
+      "trend_hemoglobin",
+      "last_creatinine",
+      "last_creatinine_age_h",
+      "cum_creatinine_median",
+      "cum_creatinine_count",
+      "trend_creatinine",
+      "last_bun",
+      "last_bun_age_h",
+      "cum_bun_median",
+      "cum_bun_count",
+      "trend_bun",
+      "last_inr",
+      "last_inr_age_h",
+      "cum_inr_median",
+      "cum_inr_count",
+      "trend_inr",
+      "last_pt",
+      "last_pt_age_h",
+      "cum_pt_median",
+      "cum_pt_count",
+      "trend_pt",
+      "last_aptt",
+      "last_aptt_age_h",
+      "cum_aptt_median",
+      "cum_aptt_count",
+      "trend_aptt",
+      "last_heart_rate_mean",
+      "last_heart_rate_worst",
+      "last_sbp_mean",
+      "last_sbp_worst",
+      "last_dbp_mean",
+      "last_dbp_worst",
+      "last_resp_rate_mean",
+      "last_resp_rate_worst",
+      "last_spo2_mean",
+      "last_spo2_worst",
+      "last_temperature_mean",
+      "last_temperature_worst",
+      "last_heart_rate_age_h",
+      "last_sbp_age_h",
+      "last_dbp_age_h",
+      "last_resp_rate_age_h",
+      "last_spo2_age_h",
+      "last_temperature_age_h",
+      "proc_cvc_cum",
+      "proc_mechvent_cum",
+      "proc_transfusion_cum"
+    ],
+    "n_features": 88,
+    "dropped_vs_dynamic_92": [
+      "rx_heparin_last24h",
+      "rx_warfarin_last24h",
+      "rx_doac_last24h",
+      "rx_antiplatelet_last24h"
+    ],
+    "n_pool_undersampled": 106588,
+    "n_events_pool": 2742,
+    "n_eval": 1044833,
+    "n_events_eval": 2742,
+    "cv": "StratifiedGroupKFold 3x5 (seeds 42/43/44) on undersampled train+val view, stratify label, group subject_id; fold bootstrap 2000 for fold-mean AUC CI; fold metrics on undersampled view, seed42 OOF predicted on full eval view",
+    "baseline_dynamic_92": {
+      "lr_fold_mean_auc": 0.7604891617928821,
+      "lr_oof_auc": 0.8125065767082207,
+      "xgb_fold_mean_auc": 0.8067498796328404,
+      "xgb_oof_auc": 0.8506208806622986,
+      "source": "output_era/dynamic_model_results_inclprior_excl24h.json"
+    },
+    "caveat_rx_hormone_padua": "rx_hormone feeds the Padua \"ongoing hormonal treatment\" item; it is not part of the dynamic landmark feature set, so this arm has no analogous asymmetry for Padua.",
+    "runtime_s": 232.8
+  }
+}

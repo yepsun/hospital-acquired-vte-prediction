@@ -10,7 +10,7 @@ Redesign of arm_ipe/57 figures:
     per 1,000 admissions over thresholds 0.1-2.0% with the 0.5-2% clinical
     operating range shaded. Right: incremental net benefit vs Padua.
 
-Outputs (ajm/new/output/): Figure_2_calibration_v3.png/.svg,
+Outputs (ajm/new/output_era/): Figure_2_calibration_v3.png/.svg,
 Figure_3_dca_v3.png/.svg, revision_threshold_calib_v3.json
 Run from the repository root that contains results_vte/.
 """
@@ -42,10 +42,10 @@ XGB_PARAMS = dict(n_estimators=300, max_depth=3, learning_rate=0.05,
 C_PADUA, C_LR, C_XGB = '#636363', '#1a6fb5', '#c22e38'
 
 fs = json.load(open(f'{RES}/feature_sets_v2.json'))
-splits = json.load(open(f'{RES}/ajm/new/data/primary_inclprior_excl24h_splits.json'))
+splits = json.load(open(f'{RES}/ajm/new/data_era/primary_inclprior_excl24h_splits.json'))
 FEATS = fs['main']
 
-df = pd.read_parquet(f'{RES}/ajm/new/data/primary_inclprior_excl24h_model_dataset.parquet')
+df = pd.read_parquet(f'{RES}/ajm/new/data_era/primary_inclprior_excl24h_model_dataset.parquet')
 pool_ids = set(splits['train']) | set(splits['val'])
 pool = df[df['hadm_id'].isin(pool_ids)].reset_index(drop=True)
 X = pool[FEATS].values.astype(np.float32)
@@ -146,7 +146,7 @@ plt.rcParams.update({
     'axes.grid': True, 'grid.color': '#dcdcdc', 'grid.linewidth': 0.55,
     'xtick.direction': 'out', 'ytick.direction': 'out', 'pdf.fonttype': 42})
 
-OUT = f'{RES}/ajm/new/output'
+OUT = f'{RES}/ajm/new/output_era'
 
 # ---- Figure 2: small multiples, one panel per score ------------------------
 fig, axes = plt.subplots(1, 3, figsize=(9.6, 3.5), sharex=True, sharey=True)
