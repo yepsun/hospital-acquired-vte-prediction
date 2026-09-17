@@ -1,7 +1,9 @@
 # Analysis code: machine learning versus Padua/IMPROVE/Caprini for in-hospital VTE prediction
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22168152.svg)](https://doi.org/10.5281/zenodo.22168152)
-<!-- DOI and version to be updated for the next release -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22813219.svg)](https://doi.org/10.5281/zenodo.22813219)
+
+Release v1.1.0 — the era-restricted (2008–2019) pipeline. This release supersedes
+the earlier v1.0.x deposits, which have been withdrawn.
 
 The complete analysis code for:
 
@@ -310,9 +312,9 @@ data are not available and are not included.
 
 If you use this code, please cite the accompanying manuscript and the code release:
 
-> Feng J, Li Y, Yu S, Shi J, Sun X. Analysis code for machine learning versus the
-> Padua and IMPROVE scores for prediction of radiologically confirmed in-hospital
-> venous thromboembolism. Zenodo, 2026. doi: [10.5281/zenodo.22168152](https://doi.org/10.5281/zenodo.22168152)
+> Feng J, Li Y, Yu S, Shi J, Sun X. Analysis code for machine learning prediction of
+> radiologically confirmed hospital-acquired venous thromboembolism (version 1.1.0).
+> Zenodo, 2026. doi: [10.5281/zenodo.22813219](https://doi.org/10.5281/zenodo.22813219)
 
 ## Contact
 
