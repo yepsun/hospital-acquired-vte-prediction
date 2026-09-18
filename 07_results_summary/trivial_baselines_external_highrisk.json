@@ -1,0 +1,167 @@
+{
+ "method": "external fully enumerated high-risk stratum (29,144 admissions, 559 events); frozen admission-safe XGBoost (strict_42) and 57-feature XGBoost applied as in run_external_validation_deploysafe_ipe.py; model rows use the strict-rank rule at each rule's flag rate; Wilson 95% CIs.",
+ "n": 29144,
+ "n_events": 559,
+ "reproduced_auc": {
+  "xgb42": 0.7061530701360503,
+  "xgb57": 0.6783539848983182
+ },
+ "rows": [
+  {
+   "flag_rate": 0.6252401866593467,
+   "flagged_n": 18222,
+   "sensitivity": 0.7119856887298748,
+   "sensitivity_ci95": [
+    0.6730992954895892,
+    0.7479783220852311
+   ],
+   "ppv": 0.021841729777192405,
+   "tp": 398,
+   "baseline": "padua_ge4",
+   "type": "clinical rule"
+  },
+  {
+   "flag_rate": 0.6252401866593467,
+   "flagged_n": 18222,
+   "sensitivity": 0.8461538461538461,
+   "sensitivity_ci95": [
+    0.8138898614657893,
+    0.8736925773589174
+   ],
+   "ppv": 0.02595763362967841,
+   "tp": 473,
+   "baseline": "xgb42 @ top 62.5%",
+   "type": "model matched to padua_ge4"
+  },
+  {
+   "flag_rate": 0.6252401866593467,
+   "flagged_n": 18222,
+   "sensitivity": 0.7817531305903399,
+   "sensitivity_ci95": [
+    0.7456509865573182,
+    0.814009138067443
+   ],
+   "ppv": 0.02398199978048513,
+   "tp": 437,
+   "baseline": "xgb57 @ top 62.5%",
+   "type": "model matched to padua_ge4"
+  },
+  {
+   "flag_rate": 0.24008372220697227,
+   "flagged_n": 6997,
+   "sensitivity": 0.5134168157423972,
+   "sensitivity_ci95": [
+    0.4720321268563984,
+    0.5546183552685903
+   ],
+   "ppv": 0.04101757896241246,
+   "tp": 287,
+   "baseline": "improve_ge4",
+   "type": "clinical rule"
+  },
+  {
+   "flag_rate": 0.24008372220697227,
+   "flagged_n": 6997,
+   "sensitivity": 0.5330948121645797,
+   "sensitivity_ci95": [
+    0.4916510075349455,
+    0.57408684837336
+   ],
+   "ppv": 0.042589681291982276,
+   "tp": 298,
+   "baseline": "xgb42 @ top 24.0%",
+   "type": "model matched to improve_ge4"
+  },
+  {
+   "flag_rate": 0.24008372220697227,
+   "flagged_n": 6997,
+   "sensitivity": 0.518783542039356,
+   "sensitivity_ci95": [
+    0.4773764102201786,
+    0.5599342647548055
+   ],
+   "ppv": 0.04144633414320423,
+   "tp": 290,
+   "baseline": "xgb57 @ top 24.0%",
+   "type": "model matched to improve_ge4"
+  },
+  {
+   "flag_rate": 0.09737853417513039,
+   "flagged_n": 2838,
+   "sensitivity": 0.37209302325581395,
+   "sensitivity_ci95": [
+    0.33302308380597806,
+    0.4129089866024637
+   ],
+   "ppv": 0.07329105003523609,
+   "tp": 208,
+   "baseline": "icu_first24h",
+   "type": "clinical rule"
+  },
+  {
+   "flag_rate": 0.09737853417513039,
+   "flagged_n": 2838,
+   "sensitivity": 0.3148479427549195,
+   "sensitivity_ci95": [
+    0.2777195356877247,
+    0.35450381098743233
+   ],
+   "ppv": 0.06201550387596899,
+   "tp": 176,
+   "baseline": "xgb42 @ top 9.7%",
+   "type": "model matched to icu_first24h"
+  },
+  {
+   "flag_rate": 0.09737853417513039,
+   "flagged_n": 2838,
+   "sensitivity": 0.33094812164579607,
+   "sensitivity_ci95": [
+    0.29320962529859973,
+    0.37099429992654365
+   ],
+   "ppv": 0.06518675123326285,
+   "tp": 185,
+   "baseline": "xgb57 @ top 9.7%",
+   "type": "model matched to icu_first24h"
+  },
+  {
+   "flag_rate": 0.6270587427944002,
+   "flagged_n": 18275,
+   "sensitivity": 0.4150268336314848,
+   "sensitivity_ci95": [
+    0.37489568079967983,
+    0.45631793240872565
+   ],
+   "ppv": 0.012694938440492477,
+   "tp": 232,
+   "baseline": "active_cancer",
+   "type": "clinical rule"
+  },
+  {
+   "flag_rate": 0.6270587427944002,
+   "flagged_n": 18275,
+   "sensitivity": 0.8461538461538461,
+   "sensitivity_ci95": [
+    0.8138898614657893,
+    0.8736925773589174
+   ],
+   "ppv": 0.02588235294117647,
+   "tp": 473,
+   "baseline": "xgb42 @ top 62.7%",
+   "type": "model matched to active_cancer"
+  },
+  {
+   "flag_rate": 0.6270587427944002,
+   "flagged_n": 18275,
+   "sensitivity": 0.7817531305903399,
+   "sensitivity_ci95": [
+    0.7456509865573182,
+    0.814009138067443
+   ],
+   "ppv": 0.023912448700410396,
+   "tp": 437,
+   "baseline": "xgb57 @ top 62.7%",
+   "type": "model matched to active_cancer"
+  }
+ ]
+}
