@@ -1,9 +1,10 @@
 # Analysis code: machine learning versus Padua/IMPROVE/Caprini for in-hospital VTE prediction
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22813219.svg)](https://doi.org/10.5281/zenodo.22813219)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22813218.svg)](https://doi.org/10.5281/zenodo.22813218)
 
-Release v1.1.0 — the era-restricted (2008–2019) pipeline. This release supersedes
-the earlier v1.0.x deposits, which have been withdrawn.
+Release v1.1.1 — the era-restricted (2008–2019) pipeline. The badge resolves to
+the latest version; v1.1.1 adds the trivial-clinical-baseline analysis
+(Table 5 of the revision). Supersedes the withdrawn v1.0.x deposits.
 
 The complete analysis code for:
 
@@ -92,6 +93,7 @@ traced to one of these files.
 | Table S9 — calibration and decision-curve summary | `nested_calibration_dca_inclprior_excl24h.json` (cross-fitted calibration and OOF DCA), `dca_reconciliation_inclprior_excl24h.json` (estimand/provenance reconciliation), `dca_manuscript_grid_table_inclprior_excl24h.json` (the exact 0.5–2% band means and per-threshold grid values quoted in the table), `calibration_dca_inclprior_excl24h.json` (test-partition sensitivity) | `04_evaluation/calibration_dca/65_…`, `69_…`, `70_…`, `41b_…` |
 | Table S11 — Caprini item mapping | `01_cohort/score_mapping_caprini.md`, `caprini_distribution.json` (score distribution, item prevalence, high-risk proportions, mapping-error bounds) | `01_cohort/85h_clinical_scores_caprini.py` writes `caprini_distribution.json`; the mapping is documented in `01_cohort/score_mapping_caprini.md` |
 | Table S12 — treatment-predictor sensitivity | `no_rx_sensitivity_inclprior_excl24h.json` (52-feature static arms, subgroups by heparin exposure, ΔAUC/NRI/IDI), `no_rx_foldmean_98convention_inclprior_excl24h.json` (52-feature fold-mean under the Table 2 fixed-seed convention), `dynamic_norx_model_results_inclprior_excl24h.json` (88-feature dynamic arms) | `04_evaluation/sensitivity/64_no_rx_sensitivity.py`, `64c_no_rx_foldmean_98conv.py`, `64b_no_rx_dynamic.py` |
+| Table 5 — trivial clinical baselines vs the model at matched flag rates | `trivial_baselines_inclprior_excl24h.json` | `04_evaluation/baselines/99_trivial_baselines.py` (XGBoost OOF reproduces 61b exactly; model rows use the strict-rank rule at each rule's flag rate) |
 | Deploy-safe suite (preferred deployment feature set) | `deploysafe_full_suite_summary_deploysafe.json` (all four arms in one file), `deploysafe_subgroups_deploysafe.json` (medical/surgical subgroups for every arm), `deploysafe_auprc_ci_deploysafe.json` (AUPRC with bootstrap CIs) | `04_evaluation/deploysafe/98c_deploysafe_full_suite.py`, `98d_deploysafe_auprc_ci.py` |
 
 Two files in `07_results_summary/` are retained only as the documented earlier
@@ -260,6 +262,7 @@ commands below, and `85i_join_caprini_era_cohorts.py` must run after
 | 33 | `python3 04_evaluation/deploysafe/98c_deploysafe_full_suite.py` | ~15 min (four arms + subgroups) |
 | 34 | `python3 04_evaluation/deploysafe/98d_deploysafe_auprc_ci.py` | ~8.5 min |
 | 35 | `python3 08_external_validation/…` | requires the external data |
+| 36 | `python3 04_evaluation/baselines/99_trivial_baselines.py` | ~6 min |
 
 `run_scripts/run_all_era.sh` (the four 2×2 cells, `39b` through `57`, and the
 dynamic pair) took ~38 minutes end to end; `run_scripts/run_era.sh` (dynamic pair
@@ -313,8 +316,9 @@ data are not available and are not included.
 If you use this code, please cite the accompanying manuscript and the code release:
 
 > Feng J, Li Y, Yu S, Shi J, Sun X. Analysis code for machine learning prediction of
-> radiologically confirmed hospital-acquired venous thromboembolism (version 1.1.0).
-> Zenodo, 2026. doi: [10.5281/zenodo.22813219](https://doi.org/10.5281/zenodo.22813219)
+> radiologically confirmed hospital-acquired venous thromboembolism (version 1.1.1).
+> Zenodo, 2026. doi: [10.5281/zenodo.22813218](https://doi.org/10.5281/zenodo.22813218)
+> (concept DOI; resolves to the latest version).
 
 ## Contact
 

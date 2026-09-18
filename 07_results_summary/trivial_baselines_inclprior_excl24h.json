@@ -1,0 +1,234 @@
+{
+ "method": "development pool of the primary arm (313,064 admissions, 554 events); XGBoost OOF reproduces 61b_static_oof_multiseed_era_fixed.py (seed-42 5-fold StratifiedGroupKFold by patient, fixed hyperparameters); model rows use the strict-rank rule at each clinical rule's flag rate; sensitivity CIs are Wilson 95%.",
+ "n_pool": 313064,
+ "n_events": 554,
+ "reproduced_auc": {
+  "xgb57": 0.808954546667503,
+  "xgb42": 0.7864191724926174
+ },
+ "rows": [
+  {
+   "flag_rate": 0.1838410037564204,
+   "flagged_n": 57554,
+   "sensitivity": 0.5613718411552346,
+   "sensitivity_ci95": [
+    0.5197681848837319,
+    0.602130217816963
+   ],
+   "ppv": 0.00540362094728429,
+   "tp": 311,
+   "baseline": "icu_first24h",
+   "type": "clinical rule"
+  },
+  {
+   "flag_rate": 0.1838410037564204,
+   "flagged_n": 57554,
+   "sensitivity": 0.6335740072202166,
+   "sensitivity_ci95": [
+    0.5926589941229217,
+    0.6726492941080027
+   ],
+   "ppv": 0.0060986204260346805,
+   "tp": 351,
+   "baseline": "xgb57 @ top 18.4% (matches icu_first24h)",
+   "type": "model matched to icu_first24h"
+  },
+  {
+   "flag_rate": 0.1838410037564204,
+   "flagged_n": 57554,
+   "sensitivity": 0.592057761732852,
+   "sensitivity_ci95": [
+    0.5506356092607609,
+    0.6322119947902813
+   ],
+   "ppv": 0.005698995725753206,
+   "tp": 328,
+   "baseline": "xgb42 @ top 18.4% (matches icu_first24h)",
+   "type": "model matched to icu_first24h"
+  },
+  {
+   "flag_rate": 0.1441302736820586,
+   "flagged_n": 45122,
+   "sensitivity": 0.2815884476534296,
+   "sensitivity_ci95": [
+    0.2457376947310466,
+    0.3204474015400095
+   ],
+   "ppv": 0.003457293559682638,
+   "tp": 156,
+   "baseline": "active_cancer",
+   "type": "clinical rule"
+  },
+  {
+   "flag_rate": 0.1441302736820586,
+   "flagged_n": 45122,
+   "sensitivity": 0.5703971119133574,
+   "sensitivity_ci95": [
+    0.5288301735291683,
+    0.6109944648628054
+   ],
+   "ppv": 0.007003235672177652,
+   "tp": 316,
+   "baseline": "xgb57 @ top 14.4% (matches active_cancer)",
+   "type": "model matched to active_cancer"
+  },
+  {
+   "flag_rate": 0.1441302736820586,
+   "flagged_n": 45122,
+   "sensitivity": 0.5108303249097473,
+   "sensitivity_ci95": [
+    0.46927281149167005,
+    0.5522386713378643
+   ],
+   "ppv": 0.006271885111475555,
+   "tp": 283,
+   "baseline": "xgb42 @ top 14.4% (matches active_cancer)",
+   "type": "model matched to active_cancer"
+  },
+  {
+   "flag_rate": 0.30354496205248765,
+   "flagged_n": 95029,
+   "sensitivity": 0.6931407942238267,
+   "sensitivity_ci95": [
+    0.653515636800211,
+    0.7301058069931524
+   ],
+   "ppv": 0.0040408717338917596,
+   "tp": 384,
+   "baseline": "icu_or_cancer",
+   "type": "clinical rule"
+  },
+  {
+   "flag_rate": 0.30354496205248765,
+   "flagged_n": 95029,
+   "sensitivity": 0.7545126353790613,
+   "sensitivity_ci95": [
+    0.7170021228137835,
+    0.788517723680275
+   ],
+   "ppv": 0.004398657251996759,
+   "tp": 418,
+   "baseline": "xgb57 @ top 30.4% (matches icu_or_cancer)",
+   "type": "model matched to icu_or_cancer"
+  },
+  {
+   "flag_rate": 0.30354496205248765,
+   "flagged_n": 95029,
+   "sensitivity": 0.7292418772563177,
+   "sensitivity_ci95": [
+    0.6907548278265409,
+    0.7645715587319374
+   ],
+   "ppv": 0.004251333803365289,
+   "tp": 404,
+   "baseline": "xgb42 @ top 30.4% (matches icu_or_cancer)",
+   "type": "model matched to icu_or_cancer"
+  },
+  {
+   "flag_rate": 0.3798616257378683,
+   "flagged_n": 118921,
+   "sensitivity": 0.7075812274368231,
+   "sensitivity_ci95": [
+    0.6683768735370318,
+    0.7439265473623776
+   ],
+   "ppv": 0.0032963059510094936,
+   "tp": 392,
+   "baseline": "padua_ge4",
+   "type": "clinical rule"
+  },
+  {
+   "flag_rate": 0.3798616257378683,
+   "flagged_n": 118921,
+   "sensitivity": 0.8285198555956679,
+   "sensitivity_ci95": [
+    0.794896338144828,
+    0.8576186410177156
+   ],
+   "ppv": 0.003859705182432035,
+   "tp": 459,
+   "baseline": "xgb57 @ top 38.0% (matches padua_ge4)",
+   "type": "model matched to padua_ge4"
+  },
+  {
+   "flag_rate": 0.3798616257378683,
+   "flagged_n": 118921,
+   "sensitivity": 0.7996389891696751,
+   "sensitivity_ci95": [
+    0.7642949544727072,
+    0.8308560704777447
+   ],
+   "ppv": 0.003725162082390831,
+   "tp": 443,
+   "baseline": "xgb42 @ top 38.0% (matches padua_ge4)",
+   "type": "model matched to padua_ge4"
+  },
+  {
+   "flag_rate": 0.15685291186466666,
+   "flagged_n": 49105,
+   "sensitivity": 0.3574007220216607,
+   "sensitivity_ci95": [
+    0.3186012692848764,
+    0.3981642067929205
+   ],
+   "ppv": 0.004032175949495978,
+   "tp": 198,
+   "baseline": "improve_ge4",
+   "type": "clinical rule"
+  },
+  {
+   "flag_rate": 0.15685291186466666,
+   "flagged_n": 49105,
+   "sensitivity": 0.5902527075812274,
+   "sensitivity_ci95": [
+    0.5488154059182365,
+    0.6304469509945502
+   ],
+   "ppv": 0.0066591996741676,
+   "tp": 327,
+   "baseline": "xgb57 @ top 15.7% (matches improve_ge4)",
+   "type": "model matched to improve_ge4"
+  },
+  {
+   "flag_rate": 0.15685291186466666,
+   "flagged_n": 49105,
+   "sensitivity": 0.5397111913357401,
+   "sensitivity_ci95": [
+    0.49807528953154534,
+    0.5808001475100809
+   ],
+   "ppv": 0.006088992974238876,
+   "tp": 299,
+   "baseline": "xgb42 @ top 15.7% (matches improve_ge4)",
+   "type": "model matched to improve_ge4"
+  },
+  {
+   "flag_rate": 0.07500063884700892,
+   "flagged_n": 23480,
+   "sensitivity": 0.427797833935018,
+   "sensitivity_ci95": [
+    0.38723434234179144,
+    0.4693557721279791
+   ],
+   "ppv": 0.010093696763202726,
+   "tp": 237,
+   "baseline": "xgb57 @ top 7.5%",
+   "type": "model, text operating point",
+   "oof_auc": 0.808954546667503
+  },
+  {
+   "flag_rate": 0.07500063884700892,
+   "flagged_n": 23480,
+   "sensitivity": 0.38267148014440433,
+   "sensitivity_ci95": [
+    0.3431373250265134,
+    0.4238216109868638
+   ],
+   "ppv": 0.009028960817717206,
+   "tp": 212,
+   "baseline": "xgb42 @ top 7.5%",
+   "type": "model, text operating point",
+   "oof_auc": 0.7864191724926174
+  }
+ ]
+}
