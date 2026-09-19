@@ -157,8 +157,15 @@ def fast_auc(yb, pb):
 
 
 def cluster_boot(rows, preds, deltas_pairs, n_boot=N_BOOT, seed=SEED):
-    """Patient-level cluster bootstrap on `rows`; returns dict of delta CIs."""
+    """Patient-level cluster bootstrap on `rows`; returns dict of delta CIs.
+
+    `rows` are positions into the full-length arrays in `preds`; predictions
+    are sliced to the subset FIRST so that within-loop positions index the
+    subset arrays (a full-length `preds` indexed with subset positions would
+    silently score the wrong admissions on truncated subgroups).
+    """
     deltas_pairs = dict(deltas_pairs)
+    P = {k: np.asarray(v)[rows] for k, v in preds.items()}
     yb0 = y[rows]
     subj_codes, uniq = pd.factorize(groups[rows])
     n_subj = len(uniq)
@@ -179,7 +186,7 @@ def cluster_boot(rows, preds, deltas_pairs, n_boot=N_BOOT, seed=SEED):
             bn = rng.choice(bn, NEG_CAP, replace=False)
         idx = np.concatenate([be, bn])
         yy = yb0[idx]
-        a = {k: fast_auc(yy, v[idx]) for k, v in preds.items()}
+        a = {k: fast_auc(yy, v[idx]) for k, v in P.items()}
         for name, (i, j) in deltas_pairs.items():
             acc[name].append(a[i] - a[j])
     out = {}

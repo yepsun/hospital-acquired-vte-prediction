@@ -2,13 +2,18 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22813218.svg)](https://doi.org/10.5281/zenodo.22813218)
 
-Release v1.1.3 — the era-restricted (2008–2019) pipeline. The badge resolves to
+Release v1.1.4 — the era-restricted (2008–2019) pipeline. The badge resolves to
 the latest version. v1.1.1/v1.1.2 added the trivial-clinical-baseline analyses;
-v1.1.3 adds the second-revision reviewer-response analyses (healthcare-intensity
+v1.1.3 added the second-revision reviewer-response analyses (healthcare-intensity
 feature removal, bedside-computable score variants, high-risk screening
 truncation series, sex strata, strict-pool re-evaluation under the primary
-protocol, SHAP summary, Figure 2 redraw). Supersedes the withdrawn v1.0.x
-deposits.
+protocol, SHAP summary, Figure 2 redraw). v1.1.4 fixes a bootstrap-indexing
+defect in 99c_revision_response_analyses.py that corrupted the delta-AUC
+column of the truncation series (Table S3d Panel C) — subset positions were
+used to index full-length prediction arrays; per-admission OOF scores, full-pool
+deltas, sex-stratum CIs and strict-pool fold-means were unaffected, and the
+corrected Panel C is shipped in revision_response_analyses.json. Supersedes the
+withdrawn v1.0.x deposits.
 
 The complete analysis code for:
 
