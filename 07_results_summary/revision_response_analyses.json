@@ -1,0 +1,327 @@
+{
+ "method": "development pool of the primary arm (313,064 / 554); seed-42 5-fold StratifiedGroupKFold by patient; XGBoost native missing routing, fixed hyperparameters; OOF AUC asserted against Table S3c (0.7864) before writing; deltas from patient-level cluster bootstrap (2,000 replicates, negatives capped at 50,000)",
+ "n_pool": 313064,
+ "n_events": 554,
+ "reproduced_auc42": 0.7864191724926174,
+ "feature_sets": {
+  "safe42": [
+   "lab_wbc_median",
+   "lab_wbc_count",
+   "lab_neutrophils_count",
+   "lab_lymphocytes_count",
+   "lab_platelet_median",
+   "lab_platelet_count",
+   "lab_rdw_median",
+   "lab_rdw_count",
+   "lab_hemoglobin_median",
+   "lab_hemoglobin_count",
+   "lab_ddimer_count",
+   "lab_inr_median",
+   "lab_inr_count",
+   "lab_pt_median",
+   "lab_pt_count",
+   "lab_aptt_median",
+   "lab_aptt_count",
+   "lab_fibrinogen_count",
+   "lab_creatinine_median",
+   "lab_creatinine_count",
+   "lab_bun_median",
+   "lab_bun_count",
+   "lab_albumin_count",
+   "lab_crp_count",
+   "bmi",
+   "age",
+   "male",
+   "prior_vte",
+   "prior_vte_any",
+   "adm_elective",
+   "adm_emergency",
+   "first_careunit_icu",
+   "prior_admissions_n",
+   "rx_heparin",
+   "rx_warfarin",
+   "rx_doac",
+   "rx_antiplatelet",
+   "rx_hormone",
+   "proc_cvc",
+   "proc_mechvent",
+   "proc_transfusion",
+   "icu_los_first24h"
+  ],
+  "utilization_removed": [
+   "lab_wbc_count",
+   "lab_neutrophils_count",
+   "lab_lymphocytes_count",
+   "lab_platelet_count",
+   "lab_rdw_count",
+   "lab_hemoglobin_count",
+   "lab_ddimer_count",
+   "lab_inr_count",
+   "lab_pt_count",
+   "lab_aptt_count",
+   "lab_fibrinogen_count",
+   "lab_creatinine_count",
+   "lab_bun_count",
+   "lab_albumin_count",
+   "lab_crp_count",
+   "proc_cvc",
+   "proc_mechvent",
+   "proc_transfusion",
+   "icu_los_first24h"
+  ],
+  "safe23": [
+   "lab_wbc_median",
+   "lab_platelet_median",
+   "lab_rdw_median",
+   "lab_hemoglobin_median",
+   "lab_inr_median",
+   "lab_pt_median",
+   "lab_aptt_median",
+   "lab_creatinine_median",
+   "lab_bun_median",
+   "bmi",
+   "age",
+   "male",
+   "prior_vte",
+   "prior_vte_any",
+   "adm_elective",
+   "adm_emergency",
+   "first_careunit_icu",
+   "prior_admissions_n",
+   "rx_heparin",
+   "rx_warfarin",
+   "rx_doac",
+   "rx_antiplatelet",
+   "rx_hormone"
+  ]
+ },
+ "aucs_full_pool": {
+  "xgb42": 0.7864191724926174,
+  "xgb23": 0.768995146667942,
+  "padua": 0.7072878361033241,
+  "improve": 0.6883837883252718,
+  "bedside_padua": 0.7125500908158664,
+  "bedside_improve": 0.71545379284325,
+  "caprini": 0.6883464407839309,
+  "lr42": 0.7673267408511519,
+  "lr23": 0.7358141723580369
+ },
+ "boot_full_pool": {
+  "xgb42_vs_padua": {
+   "estimate": 0.07950801276472994,
+   "ci": [
+    0.05423110247404035,
+    0.10401308501761886
+   ],
+   "p_two_sided": 0.0
+  },
+  "xgb23_vs_padua": {
+   "estimate": 0.06203489892478595,
+   "ci": [
+    0.03715282159123306,
+    0.08574808356529744
+   ],
+   "p_two_sided": 0.0
+  },
+  "xgb42_vs_bedside_padua": {
+   "estimate": 0.07429775322211901,
+   "ci": [
+    0.05640641238035483,
+    0.09276582605165747
+   ],
+   "p_two_sided": 0.0
+  },
+  "xgb42_vs_xgb23": {
+   "estimate": 0.017473113839943998,
+   "ci": [
+    0.011521695155502356,
+    0.02346383796558234
+   ],
+   "p_two_sided": 0.0
+  },
+  "lr42_vs_padua": {
+   "estimate": 0.06046763299192672,
+   "ci": [
+    0.032706795330495295,
+    0.08703833039950994
+   ],
+   "p_two_sided": 0.0
+  },
+  "lr23_vs_padua": {
+   "estimate": 0.028769264082927317,
+   "ci": [
+    0.0013176093287994796,
+    0.05513565997125644
+   ],
+   "p_two_sided": 0.039
+  },
+  "lr42_vs_lr23": {
+   "estimate": 0.0316983689089994,
+   "ci": [
+    0.018792162075262037,
+    0.044811464734440164
+   ],
+   "p_two_sided": 0.0
+  }
+ },
+ "bedside_scores": {
+  "bedside_padua_items": "prior VTE history (3) + ICU within first 24 h immobility proxy (3) + age >= 70 (2) + BMI >= 30 (1) + hormonal treatment in first 24 h (1); index-admission ICD items (active cancer, thrombophilia, surgery/trauma, heart/respiratory failure, MI/stroke, infection/rheumatologic) scored 0 because discharge-coded",
+  "bedside_padua_high_rate": 0.14983198323665448,
+  "bedside_improve_items": "prior VTE history (3) + ICU immobility proxy (2) + ICU/CCU stay (1) + age > 60 (1); thrombophilia, cancer, central venous catheter scored 0 (discharge-coded or admission-level)",
+  "bedside_improve_high_rate": 0.1523586231569264
+ },
+ "truncation_series": [
+  {
+   "label": "none (full dev pool)",
+   "n": 313064,
+   "events": 554,
+   "event_rate": 0.0017696062147037027,
+   "auc": {
+    "xgb42": 0.7864191724926174,
+    "padua": 0.7072878361033241,
+    "bedside_padua": 0.7125500908158664,
+    "improve": 0.6883837883252718
+   },
+   "delta_xgb42_vs_padua": {
+    "estimate": 0.07950801276472994,
+    "ci": [
+     0.05423110247404035,
+     0.10401308501761886
+    ],
+    "p_two_sided": 0.0
+   }
+  },
+  {
+   "label": "Padua >= 4",
+   "n": 118921,
+   "events": 392,
+   "event_rate": 0.0032963059510094936,
+   "auc": {
+    "xgb42": 0.7187436778151768,
+    "padua": 0.6054359210464467,
+    "bedside_padua": 0.5912511766258528,
+    "improve": 0.5783883445556508
+   },
+   "delta_xgb42_vs_padua": {
+    "estimate": 0.02076516275797641,
+    "ci": [
+     -0.00851696628359259,
+     0.05135843680124224
+    ],
+    "p_two_sided": 0.18
+   }
+  },
+  {
+   "label": "Padua >= 4 or Caprini >= 5 (external screen)",
+   "n": 135242,
+   "events": 414,
+   "event_rate": 0.0030611792194732406,
+   "auc": {
+    "xgb42": 0.725072704905545,
+    "padua": 0.6211273705099172,
+    "bedside_padua": 0.609263758341456,
+    "improve": 0.5915513094586498
+   },
+   "delta_xgb42_vs_padua": {
+    "estimate": -0.0009205668361097974,
+    "ci": [
+     -0.030850734721930135,
+     0.028823466091954002
+    ],
+    "p_two_sided": 0.938
+   }
+  },
+  {
+   "label": "top 25% by Padua score",
+   "n": 87377,
+   "events": 321,
+   "event_rate": 0.0036737356512583402,
+   "auc": {
+    "xgb42": 0.7132989844042091,
+    "padua": 0.6051344434863712,
+    "bedside_padua": 0.5660820034341771,
+    "improve": 0.5658200422143859
+   },
+   "delta_xgb42_vs_padua": {
+    "estimate": 0.004129350330285792,
+    "ci": [
+     -0.028011648231907955,
+     0.03769024083011587
+    ],
+    "p_two_sided": 0.806
+   }
+  },
+  {
+   "label": "top 15% by Padua score",
+   "n": 56242,
+   "events": 252,
+   "event_rate": 0.004480637246186124,
+   "auc": {
+    "xgb42": 0.6947036318843784,
+    "padua": 0.5677075625749496,
+    "bedside_padua": 0.5265847146741056,
+    "improve": 0.5356418875819662
+   },
+   "delta_xgb42_vs_padua": {
+    "estimate": 0.03710182192886299,
+    "ci": [
+     0.0004899028214354619,
+     0.07549856348584354
+    ],
+    "p_two_sided": 0.045
+   }
+  }
+ ],
+ "sex_strata": {
+  "male": {
+   "n": 145710,
+   "events": 279,
+   "auc_xgb42": 0.7953116442982273,
+   "padua_auc": 0.7063411120409884,
+   "auc_xgb42_ci": [
+    0.7683950312300912,
+    0.8203403051849292
+   ],
+   "padua_auc_ci": [
+    0.6738298403268641,
+    0.7378161540427508
+   ]
+  },
+  "female": {
+   "n": 167354,
+   "events": 275,
+   "auc_xgb42": 0.7767076217075319,
+   "padua_auc": 0.7071238483265129,
+   "auc_xgb42_ci": [
+    0.7497596311470704,
+    0.8044682458679532
+   ],
+   "padua_auc_ci": [
+    0.6757916561761229,
+    0.7373903549211125
+   ]
+  }
+ },
+ "strict_pool_primary_protocol": {
+  "rows": 17485,
+  "events": 554,
+  "n_folds": 15,
+  "padua_fold_mean": 0.58030065543157,
+  "padua_auc": 0.5803006554315702,
+  "lr_fold_mean": 0.7008447606471093,
+  "xgb_fold_mean": 0.7057719277418115,
+  "protocol": "primary protocol: LR per-fold median imputation; XGBoost native missing routing, random_state fixed at 42; 3x5 StratifiedGroupKFold seeds 42/43/44"
+ },
+ "sample_size": {
+  "n_pool": 313064,
+  "n_events": 554,
+  "cox_snell_r2_oof_xgb42": -0.002173315800359621,
+  "lr_chi2_approx": -679.6486593639081,
+  "k_candidates": 57,
+  "epv_main": 9.719298245614034,
+  "epv_admission_safe": 13.19047619047619,
+  "min_n_for_shrinkage_0.9_57feat": -262556.95136220934,
+  "min_n_for_shrinkage_0.9_42feat": -193463.0167932069,
+  "note": "van Smeden/Riley shrinkage criterion: chi2_LR ~ -n*log(1-R2cs); shrinkage S = 1 - k/chi2 >= 0.9 requires n >= 10k / -log(1-R2cs). R2cs estimated from primary-model OOF log loss."
+ }
+}

@@ -8,6 +8,7 @@ xgboost==3.3.0
 torch==2.13.0
 joblib==1.5.3
 matplotlib==3.11.1
+shap==0.52.0
 pyarrow==25.0.0
 
 # External-validation LLM pre-screening scripts only (08_external_validation/)
